@@ -5,18 +5,28 @@ export function World() {
     this.components = {};
     this.systems = {};
 
-    this.createEntity = function(components) {
+    this.registerEntity = function(components) {
+        //TODO: move this to create ent in entity.js
         const id = generateId();
 
         const entity = {
-            id: id
+            id: id,
+            components: {}
         };
+
+        components.forEach(component => {
+            entity.components[component] = {};
+        });
 
         this.entities[id] = entity;
     }
 
     this.registerComponent = function(name, schema) {
         this.components[name] = schema;
+    }
+
+    this.registerSystem = function(name, system) {
+        this.systems[name] = system;
     }
 
     this.getEntities = function(components) {
