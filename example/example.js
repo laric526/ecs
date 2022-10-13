@@ -1,4 +1,4 @@
-import { World } from "../src/world";
+import { World } from "../src/world.js";
 
 const test = {
     num: Number
