@@ -1,7 +1,19 @@
+import { generateId } from "./util/id.js";
+
 export function World() {
     this.entities = {};
     this.components = {};
     this.systems = {};
+
+    this.createEntity = function(components) {
+        const id = generateId();
+
+        const entity = {
+            id: id
+        };
+
+        this.entities[id] = entity;
+    }
 
     this.registerComponent = function(name, schema) {
         this.components[name] = schema;
