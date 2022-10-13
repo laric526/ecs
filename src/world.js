@@ -10,7 +10,8 @@ export function World() {
     this.getEntities = function(components) {
         const out = [];
 
-        for (const entity in this.entities) {
+        for (const entityName in this.entities) {
+			const entity = this.entities[entityName];
             const entityComponents = Object.getOwnPropertyNames(entity.components);
             const valid = components.every(i => entityComponents.includes(i));
             
