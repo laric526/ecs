@@ -15,7 +15,7 @@ const positionComponent = {
 };
 
 
-alert(world.getEntities(["position", "velocity"]).length);*/
+console.log(world.getEntities(["position", "velocity"]).length);*/
 
 const world = new World();
 
@@ -35,7 +35,7 @@ const name = new Component("name", {
 
 
 const move = new System("move", ["position", "velocity"], (entities) => {
-    alert(`move: ${entities}`);
+    console.log(`move: ${entities}`);
     entities.forEach((entity, i) => {
         entity.components.position.x += entity.components.velocity.x;
         entity.components.position.y += entity.components.velocity.y;
@@ -43,9 +43,9 @@ const move = new System("move", ["position", "velocity"], (entities) => {
 });
 
 const renderName = new System("renderName", ["name"], (entities) => {
-    alert(`renderName: ${entities}`);
+    console.log(`renderName: ${entities}`);
     entities.forEach((entity, i) => {
-        alert(`Entity Name: ${entity.components.name.name}`);
+        console.log(`Entity Name: ${entity.components.name.name}`);
     });
 });
 

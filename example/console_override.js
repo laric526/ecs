@@ -6,7 +6,7 @@ if (window.console && console) {
             const cx = console[c]
             console[c] = function () {
                 const li = document.createElement("li");
-                li.innerHTML = arguments;
+                li.innerHTML = JSON.stringify(arguments);
                 consoleElement.appendChild(li);
                 cx.apply(this, arguments);
             }
