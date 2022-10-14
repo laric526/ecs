@@ -17,6 +17,8 @@ const positionComponent = {
 
 console.log(world.getEntities(["position", "velocity"]).length);*/
 
+console.log("exec order is pain");
+
 const world = new World();
 
 const position = new Component("position", {
