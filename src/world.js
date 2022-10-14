@@ -9,7 +9,7 @@ export function World() {
         console.log(`Registering entity ${entity.id} with components [${entity.components}]`);
         const components = {};
         entity.components.forEach((componentName, i) => {
-            let component = this.getComponent(componentName);
+            const component = this.getComponent(componentName);
             components[component.name] = instantiateComponent(component);
             console.log(`Instantiating component ${component.name}`);
         });
@@ -27,7 +27,7 @@ export function World() {
     }
 
     this.getComponent = function(name) {
-        return this.components["name"];
+        return this.components[name];
     }
 
     this.getEntities = function(query) {
