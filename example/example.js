@@ -16,7 +16,7 @@ const velocity = new Component("velocity", {
 });
 
 const name = new Component("name", {
-    name: String
+    name: { type: String, default: "playername" }
 });
 
 
