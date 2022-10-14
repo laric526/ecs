@@ -57,6 +57,10 @@ const player = new Entity(["position", "velocity", "name"]);
 const testent = new Entity(["position", "velocity"]);
 const otherent = new Entity(["position"]);
 
+console.log(`player id: ${player.id}`);
+console.log(`testent id: ${testent.id}`);
+console.log(`otherent id: ${otherent.id}`);
+
 world.registerComponent(position);
 world.registerComponent(velocity);
 world.registerComponent(name);
