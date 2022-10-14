@@ -14,16 +14,11 @@ function populateValues(obj) {
     entries.forEach((kv, i) => {
         const schema = kv[1];
         var value;
-        
-        if (schema != Object) {
-
-        } else {}
 
         if (schema.default != undefined) {
             value = schema.default;
         } else {
             var type;
-
             if (!(schema instanceof Object && !(schema instanceof Array))) {
                 type = schema;
             } else {
