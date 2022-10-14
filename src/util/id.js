@@ -1,7 +1,11 @@
-export function generateId() {
+function generateId() {
     const bytes = new Uint8Array(4);
     crypto.getRandomValues(bytes);
-    const id = btoa(bytes).slice(0, 8);
+	
+	let id = "";
+	bytes.forEach((byte) => {
+		id += byte.toString(16);
+	});
 
     return id;
 }
