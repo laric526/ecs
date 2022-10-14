@@ -11,10 +11,9 @@ export function World() {
         entity.components.forEach((componentName, i) => {
             const component = this.getComponent(componentName);
             components[component.name] = instantiateComponent(component);
+            console.log(`Instantiating component ${component.name}`);
         });
         entity.components = components;
-
-        console.log(`Populated components: [${entity.components}]`);
 
         this.entities[entity.id] = entity;
     }
