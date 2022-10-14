@@ -1,4 +1,4 @@
-function generateId() {
+export function generateId() {
     const bytes = new Uint8Array(4);
     crypto.getRandomValues(bytes);
 	
