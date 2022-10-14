@@ -29,7 +29,8 @@ function populateValues(obj) {
                     value = "";
                     break;
                 default:
-                    console.log(`Invalid data type: ${schema.type}`);
+                    console.log(`Invalid data type: ${schema.type}. Dumping schema`);
+                    console.log(`   ${schema}`);
                     break;
             }
         }
