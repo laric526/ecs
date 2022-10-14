@@ -1,6 +1,6 @@
 import { generateId } from "./util/id.js";
 
-export function Entity() {
+export function Entity(components) {
     this.id = generateId();
-    this.components = {};
+    this.components = components;
 }

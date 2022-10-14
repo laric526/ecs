@@ -1,9 +1,18 @@
+import { instantiateComponent } from "./component.js";
+
 export function World() {
     this.entities = {};
     this.components = {};
     this.systems = {};
 
     this.registerEntity = function(entity) {
+        const components = {};
+        entity.components.forEach((componentName, i) => {
+            const component = this.getComponent(componentName);
+            components[component.name] = instantiateComponent(component);
+        });
+        entity.components = components;
+
         this.entities[entity.id] = entity;
     }
 
