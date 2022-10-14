@@ -14,4 +14,10 @@ if (window.console && console) {
     }
 }
 
+window.onerror = function(error, url, line) {
+    const li = document.createElement("li");
+    li.innerHTML = `Error: ${error} on line ${line} of file ${url}.`;
+    consoleElement.appendChild(li);
+};
+
 console.log("test!");
