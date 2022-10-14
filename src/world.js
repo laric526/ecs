@@ -29,12 +29,15 @@ export function World() {
     }
 
     this.getEntities = function(query) {
+        console.log(`Getting all entities with components ${query}`);
         const out = [];
 
         for (const entityName in this.entities) {
 			const entity = this.entities[entityName];
             const components = Object.getOwnPropertyNames(entity.components);
             const valid = query.every(i => components.includes(i));
+
+            console.log(`Entity ${entityName} has components ${components}. Match = ${valid}`);
             
             if (valid) {
                 out.push(entity);
