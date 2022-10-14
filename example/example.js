@@ -54,10 +54,12 @@ const renderName = new System("renderName", ["name"], (entities) => {
 
 
 const player = new Entity(["position", "velocity", "name"]);
+const player2 = new Entity(["position", "velocity", "name"]);
 const testent = new Entity(["position", "velocity"]);
 const otherent = new Entity(["position"]);
 
 console.log(`player id: ${player.id}`);
+console.log(`player2 id: ${player.id}`);
 console.log(`testent id: ${testent.id}`);
 console.log(`otherent id: ${otherent.id}`);
 
@@ -71,5 +73,7 @@ world.registerSystem(renderName);
 world.registerEntity(player);
 world.registerEntity(testent);
 world.registerEntity(otherent);
+
+player2.components.name.name = "player 2";
 
 world.tick();

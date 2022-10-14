@@ -6,12 +6,10 @@ export function World() {
     this.systems = {};
 
     this.registerEntity = function(entity) {
-        console.log(`Registering entity ${entity.id} with components [${entity.components}]`);
         const components = {};
         entity.components.forEach((componentName, i) => {
             const component = this.getComponent(componentName);
             components[component.name] = instantiateComponent(component);
-            console.log(`Instantiating component ${component.name}`);
         });
         entity.components = components;
 
@@ -31,15 +29,12 @@ export function World() {
     }
 
     this.getEntities = function(query) {
-        console.log(`Getting all entities with components [${query}]`);
         const out = [];
 
         for (const entityName in this.entities) {
 			const entity = this.entities[entityName];
             const components = Object.getOwnPropertyNames(entity.components);
             const valid = query.every(i => components.includes(i));
-
-            console.log(`Entity ${entityName} has components [${components}]. Match = ${valid}`);
             
             if (valid) {
                 out.push(entity);
