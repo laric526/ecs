@@ -6,14 +6,21 @@ export function World() {
     this.systems = {};
 
     this.registerEntity = function(entity) {
-        const components = {};
+        const newcomponents = {};
         entity.components.forEach((componentName, i) => {
             const component = this.getComponent(componentName);
-            components[component.name] = instantiateComponent(component);
+            newcomponents[component.name] = instantiateComponent(component);
         });
-        entity.components = components;
+
+        console.log(JSON.stringify(entity));
+
+        entity.components = newcomponents;
+
+        console.log(JSON.stringify(entity));
 
         this.entities[entity.id] = entity;
+        
+        console.log(JSON.stringify(entity));
     }
 
     this.registerComponent = function(component) {
@@ -24,15 +31,19 @@ export function World() {
         this.systems[system.name] = system;
     }
 
+    this.getEntity = function(id) {
+        return this.entities[id];
+    }
+
     this.getComponent = function(name) {
         return this.components[name];
     }
 
-    this.getEntities = function(query) {
+    this.filterEntities = function(query) {
         const out = [];
 
-        for (const entityName in this.entities) {
-			const entity = this.entities[entityName];
+        for (const entityId in this.entities) {
+			const entity = this.entities[entityId];
             const components = Object.getOwnPropertyNames(entity.components);
             const valid = query.every(i => components.includes(i));
             
@@ -48,7 +59,7 @@ export function World() {
         const systemNames = Object.getOwnPropertyNames(this.systems);
         systemNames.forEach((name, i) => {
             const system = this.systems[name];
-            system.callback(this.getEntities(system.query));
+            system.callback(this.filterEntities(system.query));
         });
     }
 }
