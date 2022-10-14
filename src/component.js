@@ -14,11 +14,23 @@ function populateValues(obj) {
     entries.forEach((kv, i) => {
         const schema = kv[1];
         var value;
+        
+        if (schema != Object) {
+
+        } else {}
 
         if (schema.default != undefined) {
             value = schema.default;
         } else {
-            switch(schema.type) {
+            var type;
+
+            if (!(schema instanceof Object && !(schema instanceof Array))) {
+                type = schema;
+            } else {
+                type = schema.type;
+            }
+
+            switch(type) {
                 case Object:
                     value = populateValues(schema.schema);
                     break;
@@ -29,7 +41,7 @@ function populateValues(obj) {
                     value = "";
                     break;
                 default:
-                    console.log(`Invalid data type: ${schema.type}. Dumping schema`);
+                    console.log(`Invalid data type: ${type}. Dumping schema`);
                     console.log(`   ${schema}`);
                     break;
             }

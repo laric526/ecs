@@ -23,7 +23,7 @@ console.error("wait that worked??");
 const world = new World();
 
 const position = new Component("position", {
-    x: Number,
+    x: { type: Number },
     y: Number
 });
 
