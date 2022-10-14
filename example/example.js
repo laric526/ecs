@@ -38,7 +38,7 @@ const name = new Component("name", {
 
 
 const move = new System("move", ["position", "velocity"], (entities) => {
-    console.log(`move: ${JSON.stringify(entities)}`);
+    console.log(`move: ${entities}`);
     entities.forEach((entity, i) => {
         entity.components.position.x += entity.components.velocity.x;
         entity.components.position.y += entity.components.velocity.y;
@@ -46,7 +46,7 @@ const move = new System("move", ["position", "velocity"], (entities) => {
 });
 
 const renderName = new System("renderName", ["name"], (entities) => {
-    console.log(`renderName: ${JSON.stringify(entities)}`);
+    console.log(`renderName: ${entities}`);
     entities.forEach((entity, i) => {
         console.log(`Entity Name: ${entity.components.name.name}`);
     });
