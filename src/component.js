@@ -19,7 +19,7 @@ function populateValues(obj) {
             value = schema.default;
         } else {
             var type;
-            if (typeof schema == "object" && schema != Array) {
+            if (!(typeof schema == "object" && schema != Array)) {
                 type = schema;
             } else {
                 type = schema.type;
