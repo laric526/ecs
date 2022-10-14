@@ -1,14 +1,36 @@
-export function populateComponentDefaultValues(component) {
-
+export function instantiateComponent(component) {
+    return populateObject(component.schema);
 }
 
-function populateObjectDefaultValues(obj) {
+function populateValues(obj) {
+    const out = {};
+
     const entries = Object.entries(obj);
     entries.forEach((kv, i) => {
-        if (typeof kv[1] == "object") {
-            populateComponentDefaultValues(keys[1]);
+        const schema = kv[1];
+        var value;
+
+        if (schema.default != undefined) {
+            value = schema.default;
         } else {
-            
+            switch(schema.type) {
+                case Object:
+                    value = populateValues(schema.schema);
+                    break;
+                case Number:
+                    value = 0;
+                    break;
+                case String:
+                    value = "";
+                    break;
+                default:
+                    console.log(`Invalid data type: ${schema.type}`);
+                    break;
+            }
         }
+
+        out[kv[0]] = value;
     });
+
+    return out;
 }
