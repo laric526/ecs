@@ -71,10 +71,11 @@ world.registerSystem(move);
 world.registerSystem(renderName);
 
 world.registerEntity(player);
+world.registerEntity(player2);
 world.registerEntity(testent);
 world.registerEntity(otherent);
 
-//player2.components.name.name = "player 2";
-console.log(JSON.stringify(player2));
+player2.components.name.name = "player 2";
+//console.log(JSON.stringify(player2));
 
 world.tick();

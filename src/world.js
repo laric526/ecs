@@ -6,21 +6,15 @@ export function World() {
     this.systems = {};
 
     this.registerEntity = function(entity) {
-        const newcomponents = {};
+        const components = {};
         entity.components.forEach((componentName, i) => {
             const component = this.getComponent(componentName);
-            newcomponents[component.name] = instantiateComponent(component);
+            components[component.name] = instantiateComponent(component);
         });
 
-        console.log(JSON.stringify(entity));
-
-        entity.components = newcomponents;
-
-        console.log(JSON.stringify(entity));
+        entity.components = components;
 
         this.entities[entity.id] = entity;
-        
-        console.log(JSON.stringify(entity));
     }
 
     this.registerComponent = function(component) {
