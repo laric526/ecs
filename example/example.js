@@ -74,6 +74,7 @@ world.registerEntity(player);
 world.registerEntity(testent);
 world.registerEntity(otherent);
 
-player2.components.name.name = "player 2";
+//player2.components.name.name = "player 2";
+console.log(JSON.stringify(player2));
 
 world.tick();
