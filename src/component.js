@@ -4,7 +4,7 @@ export function Component(name, schema) {
 }
 
 export function instantiateComponent(component) {
-    return populateObject(component.schema);
+    return populateValues(component.schema);
 }
 
 function populateValues(obj) {
