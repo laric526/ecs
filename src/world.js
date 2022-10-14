@@ -1,5 +1,3 @@
-import { generateId } from "./util/id.js";
-
 export function World() {
     this.entities = {};
     this.components = {};
