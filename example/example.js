@@ -6,4 +6,10 @@ world.entities = {
     2: { components: { position: { data: "data" } } }, 
     3: { components: { position: { data: "data" }, velocity: { data: "data" }, dummy: { data: "data" } } }
 };
+
+const positionComponent = {
+    x: { type: Number, default:}
+};
+
+
 alert(world.getEntities(["position", "velocity"]).length);
