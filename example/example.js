@@ -2,23 +2,6 @@ import { Component } from "../src/component.js";
 import { Entity } from "../src/entity.js";
 import { System } from "../src/system.js";
 import { World } from "../src/world.js";
-/*
-const world = new World();
-world.entities = { 
-    1: { components: { position: { data: "data" }, velocity: { data: "data" } } }, 
-    2: { components: { position: { data: "data" } } }, 
-    3: { components: { position: { data: "data" }, velocity: { data: "data" }, dummy: { data: "data" } } }
-};
-
-const positionComponent = {
-    x: { type: Number, default:}
-};
-
-
-console.log(world.getEntities(["position", "velocity"]).length);*/
-
-console.log("exec order is pain");
-console.error("wait that worked??");
 
 const world = new World();
 
