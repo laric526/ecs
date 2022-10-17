@@ -20,19 +20,15 @@ const name = new Component("name", {
 });
 
 
-const move = new System("move", ["position", "velocity"], (entities) => {
-    console.log(`move: ${entities.map((entity) => entity.id)}`);
-    entities.forEach((entity, i) => {
-        entity.components.position.x += entity.components.velocity.x;
-        entity.components.position.y += entity.components.velocity.y;
-    });
+const move = new System("move", ["position", "velocity"], (entity) => {
+    console.log(`move: ${entity.id}`);
+    entity.components.position.x += entity.components.velocity.x;
+    entity.components.position.y += entity.components.velocity.y;
 });
 
-const renderName = new System("renderName", ["name"], (entities) => {
-    console.log(`renderName: ${entities.map((entity) => entity.id)}`);
-    entities.forEach((entity, i) => {
-        console.log(`Entity Name: ${entity.components.name.name}`);
-    });
+const renderName = new System("renderName", ["name"], (entity) => {
+    console.log(`renderName: ${entity.id}`);
+    console.log(`Entity Name: ${entity.components.name.name}`);
 });
 
 

@@ -1,3 +1,11 @@
 import { Component } from "../../src/component.js"
 
-const positionComponent = new Compon
+export const positionComponent = new Component("position", {
+    x: Number,
+    y: Number
+});
+
+export const velocityComponent = new Component("velocity", {
+    x: Number,
+    y: Number
+});

@@ -5,7 +5,7 @@ export function World() {
     this.components = {};
     this.systems = {};
 
-    this.registerEntity = function(entity) {
+    this.createEntity = function(entity) {
         const components = {};
         entity.components.forEach((componentName, i) => {
             const component = this.getComponent(componentName);
@@ -15,6 +15,10 @@ export function World() {
         entity.components = components;
 
         this.entities[entity.id] = entity;
+    }
+
+    this.removeEntity = function(entityId) {
+        delete this.entities[entityId];
     }
 
     this.registerComponent = function(component) {
@@ -53,7 +57,8 @@ export function World() {
         const systemNames = Object.getOwnPropertyNames(this.systems);
         systemNames.forEach((name, i) => {
             const system = this.systems[name];
-            system.callback(this.filterEntities(system.query));
+            const entities = this.filterEntities(system.query);
+            entities.forEach((entity, i) => system.callback(entity, i));
         });
     }
 }
