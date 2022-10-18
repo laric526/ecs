@@ -9,14 +9,14 @@ const files = [
 export function loadSprites(callback) {
     Promise.all(files.map((file) => {
         const url = SPRITES_FOLDER + file + ".png";
-        console.log(`Loading image: ${url}`);
         loadImage(url);
     })).then(images => {
         images.forEach((image, i) => {
             const name = files[i];
             sprites[name] = image;
-            console.log(`Loaded image: ${name}`);
         });
+
+        callback();
     });
 }
 

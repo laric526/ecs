@@ -8,9 +8,10 @@ import { inputComponent } from "./components.js";
 import { inputSystem } from "./systems.js";
 import { velocitySystem } from "./systems.js";
 import { initializeKeyboard } from "./util/keyboard.js";
+import { sprites } from "./util/sprites.js";
 import { loadSprites } from "./util/sprites.js";
 
-const world = new World();
+export const world = new World();
 
 world.registerComponent(positionComponent);
 world.registerComponent(rotationComponent)
@@ -24,4 +25,9 @@ world.registerSystem(inputSystem);
 
 initializeKeyboard();
 
-loadSprites()
+loadSprites(main);
+
+function main() {
+    console.log(sprites);
+    world.tick();
+}
