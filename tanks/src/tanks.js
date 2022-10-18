@@ -14,7 +14,7 @@ import { velocitySystem } from "./systems/velocity.js";
 
 import { testrender } from "./entities.js";
 
-import { initializeCanvas } from "./util/canvas.js";
+import { initializeCanvas, clearCanvas } from "./util/canvas.js";
 import { initializeKeyboard } from "./util/keyboard.js";
 import { sprites, loadSprites } from "./util/sprites.js";
 
@@ -46,7 +46,9 @@ initializeKeyboard();
 loadSprites(main);
 
 function main() {
+    clearCanvas();
     world.tick();
+    clearCanvas();
     testrender.components.position.x = 80;
     world.tick();
 }
