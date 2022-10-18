@@ -1,5 +1,5 @@
-import { System } from "../../src/system.js";
-import { keymap } from "./util/keyboard.js";
+import { System } from "../../../src/system.js";
+import { keymap } from "../util/keyboard.js";
 
 export const inputSystem = new System("input", ["input"], (entity) => {
     let longitudinal = 0;
