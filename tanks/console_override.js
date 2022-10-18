@@ -25,6 +25,3 @@ window.onerror = function(error, url, line) {
 window.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(consoleElement);
 });
-
-console.log('a');
-console.error("err");
