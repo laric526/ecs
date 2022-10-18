@@ -1,8 +1,8 @@
 var ctx;
 
 export function initializeCanvas(canvas) {
+    canvas.style.backgroundColor = "red";
     ctx = canvas.getContext("2d");
-    console.log(typeof canvas);
 }
 
 export function drawSprite(sprite, x, y, angle) {
