@@ -3,8 +3,6 @@ import { drawSprite } from "../util/canvas.js";
 import { sprites } from "../util/sprites.js";
 
 export const renderSystem = new System("render", ["sprite", "render", "position"], (entity) => {
-    console.log(entity.components.sprite.sprite);
-
     const sprite = sprites[entity.components.sprite.sprite];
 
     const x = entity.components.position.x;
