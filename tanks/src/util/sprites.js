@@ -9,7 +9,7 @@ const files = [
 export function loadSprites(callback) {
     Promise.all(files.map((file) => {
         const url = SPRITES_FOLDER + file + ".png";
-        loadImage(url);
+        return loadImage(url);
     })).then(images => {
         images.forEach((image, i) => {
             const name = files[i];
