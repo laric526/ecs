@@ -13,9 +13,9 @@ export function loadSprites(callback) {
         loadImage(url);
     })).then(images => {
         images.forEach((image, i) => {
-            const name = file[i];
-            console.log(`Loaded image: ${name}`);
+            const name = files[i];
             sprites[name] = image;
+            console.log(`Loaded image: ${name}`);
         });
     });
 }
