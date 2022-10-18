@@ -25,4 +25,6 @@ window.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(consoleElement);
 });
 
+alert("a");
+
 asdf.
