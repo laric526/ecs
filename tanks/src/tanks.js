@@ -23,6 +23,7 @@ world.registerComponent(rotationComponent)
 world.registerComponent(spriteComponent);
 world.registerComponent(tankComponent);
 world.registerComponent(velocityComponent);
+
 world.registerComponent(renderComponent);
 world.registerComponent(playerControlledComponent);
 
