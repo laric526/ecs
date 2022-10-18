@@ -1,4 +1,5 @@
-const consoleElement = document.getElementById("console");
+const consoleElement = document.createElement("ul");
+document.body.appendChild(consoleElement);
 
 if (window.console && console) {
     for (const c in console) {
