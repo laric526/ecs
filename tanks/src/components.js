@@ -5,7 +5,23 @@ export const positionComponent = new Component("position", {
     y: Number
 });
 
+export const rotationComponent = new Component("rotation", {
+    angle: Number
+})
+
 export const velocityComponent = new Component("velocity", {
     x: Number,
     y: Number
+});
+
+export const inputComponent = new Component("input", {
+    axes: { 
+        type: Object,
+        schema: {
+            longitudinal: Number,
+            lateral: Number
+        }
+    },
+    fire: Boolean,
+    bomb: Boolean
 });

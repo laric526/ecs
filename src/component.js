@@ -32,6 +32,9 @@ function populateValues(obj) {
                 case Number:
                     value = 0;
                     break;
+                case Boolean:
+                    value = false;
+                    break;
                 case String:
                     value = "";
                     break;
