@@ -12,6 +12,8 @@ import { inputSystem } from "./systems/input.js";
 import { renderSystem } from "./systems/render.js";
 import { velocitySystem } from "./systems/velocity.js";
 
+import { testrender } from "./entities.js";
+
 import { initializeCanvas } from "./util/canvas.js";
 import { initializeKeyboard } from "./util/keyboard.js";
 import { sprites, loadSprites } from "./util/sprites.js";
@@ -31,6 +33,12 @@ world.registerComponent(playerControlledComponent);
 world.registerSystem(velocitySystem);
 world.registerSystem(renderSystem);
 world.registerSystem(inputSystem);
+
+world.createEntity(testrender);
+testrender.components.sprite.sprite = "32";
+testrender.components.position.x = "48";
+testrender.components.position.y = "24";
+
 
 initializeCanvas(document.getElementById("canvas"));
 initializeKeyboard();
