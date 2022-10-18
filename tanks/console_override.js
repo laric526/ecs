@@ -1,5 +1,4 @@
 const consoleElement = document.createElement("ul");
-document.body.appendChild(consoleElement);
 
 if (window.console && console) {
     for (const c in console) {
@@ -22,6 +21,10 @@ window.onerror = function(error, url, line) {
     li.innerHTML = `Error: ${error} on line ${line} of file ${url}.`;
     consoleElement.appendChild(li);
 };
+
+window.addEventListener("DOMContentLoaded", () => {
+    document.body.appendChild(consoleElement);
+});
 
 console.log('a');
 console.error("err");
