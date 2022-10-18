@@ -27,3 +27,7 @@ export const inputComponent = new Component("input", {
 });
 
 export const renderComponent = new Component("render", {});
+
+export const spriteComponent = new Component("sprite", {
+    sprite: String
+});
