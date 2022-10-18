@@ -34,10 +34,10 @@ world.registerSystem(velocitySystem);
 world.registerSystem(renderSystem);
 world.registerSystem(inputSystem);
 
-//world.createEntity(testrender);
-//testrender.components.sprite.sprite = "32";
-//testrender.components.position.x = "48";
-//testrender.components.position.y = "24";
+world.createEntity(testrender);
+testrender.components.sprite.sprite = "32";
+testrender.components.position.x = "48";
+testrender.components.position.y = "24";
 
 
 initializeCanvas(document.getElementById("canvas"));
