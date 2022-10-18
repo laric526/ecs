@@ -12,6 +12,7 @@ import { inputSystem } from "./systems/input.js";
 import { renderSystem } from "./systems/render.js";
 import { velocitySystem } from "./systems/velocity.js";
 
+import { initializeCanvas } from "./util/canvas.js";
 import { initializeKeyboard } from "./util/keyboard.js";
 import { sprites, loadSprites } from "./util/sprites.js";
 
@@ -31,6 +32,7 @@ world.registerSystem(velocitySystem);
 world.registerSystem(renderSystem);
 world.registerSystem(inputSystem);
 
+initializeCanvas(document.getElementById("canvas"));
 initializeKeyboard();
 
 loadSprites(main);
