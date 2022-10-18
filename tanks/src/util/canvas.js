@@ -2,7 +2,7 @@ var ctx;
 
 export function initializeCanvas(canvas) {
     ctx = canvas.getContext("2d");
-    console.log(canvas);
+    console.log(typeof canvas);
 }
 
 export function drawSprite(sprite, x, y, angle) {
