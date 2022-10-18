@@ -21,6 +21,15 @@ export function World() {
         delete this.entities[entityId];
     }
 
+    this.addComponentToEntity = function(entityId, componentName) {
+        const component = this.getComponent(componentName);
+        this.entities[entityId].components[component.name] = instantiateComponent(component);
+    }
+
+    this.removeComponentFromEntity = function(entityId, componentName) {
+        delete this.entities[entityId].components[componentName];
+    }
+
     this.registerComponent = function(component) {
         this.components[component.name] = component;
     }

@@ -25,3 +25,5 @@ export const inputComponent = new Component("input", {
     fire: Boolean,
     bomb: Boolean
 });
+
+export const renderComponent = new Component("render", {});
