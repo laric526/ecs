@@ -8,8 +8,9 @@ import { tankComponent } from "./components/tank.js";
 import { velocityComponent } from "./components/velocity.js";
 import { renderComponent, playerControlledComponent } from "./components/tags.js";
 
-import { inputSystem } from "./systems.js";
-import { velocitySystem } from "./systems.js";
+import { inputSystem } from "./systems/input.js";
+import { renderSystem } from "./systems/render.js";
+import { velocitySystem } from "./systems/velocity.js";
 
 import { initializeKeyboard } from "./util/keyboard.js";
 import { sprites, loadSprites } from "./util/sprites.js";
@@ -26,6 +27,7 @@ world.registerComponent(renderComponent);
 world.registerComponent(playerControlledComponent);
 
 world.registerSystem(velocitySystem);
+world.registerSystem(renderSystem);
 world.registerSystem(inputSystem);
 
 initializeKeyboard();
