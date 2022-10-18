@@ -13,8 +13,8 @@ export function loadSprites(callback) {
     })).then(images => {
         images.forEach((image, i) => {
             const name = file[i];
-            sprites[name] = image;
             console.log(`Loaded image: ${name}`);
+            sprites[name] = image;
         });
     });
 }
