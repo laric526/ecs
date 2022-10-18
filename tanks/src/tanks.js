@@ -1,3 +1,5 @@
+console.error("error catching test");
+
 import { World } from "../../src/world.js";
 
 import { inputComponent } from "./components/input.js";
