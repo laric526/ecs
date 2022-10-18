@@ -1,21 +1,20 @@
-const SPRITES_FOLDER = "../../img/sprites/"
+const SPRITES_FOLDER = "./img/sprites/"
 
 export const sprites = {};
 
 const files = [
-    "./img/sprites/32.png"
+    "32"
 ];
 
 export function loadSprites(callback) {
-    const imageUrls = [
-        "http://placekitten.com/85/150",
-        "http://placekitten.com/85/130",
-        "http://placekitten.com/85/110",
-    ];
-    Promise.all(files.map(loadImage)).then(images => {
+    Promise.all(files.map((file) => {
+        const url = SPRITES_FOLDER + file + ".png";
+        loadImage(url);
+    })).then(images => {
         images.forEach((image, i) => {
-            const url = imageUrls[i];
-            console.log(`Loaded image: ${url}`);
+            const name = file[i];
+            sprites[name] = image;
+            console.log(`Loaded image: ${name}`);
         });
     });
 }
