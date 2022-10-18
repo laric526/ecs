@@ -55,7 +55,6 @@ world.registerEntity(testent);
 world.registerEntity(otherent);
 
 player2.components.name.name = "player 2";
-//console.log(JSON.stringify(player2));
 
 function loop() {
     world.tick();
