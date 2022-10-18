@@ -36,8 +36,8 @@ world.registerSystem(inputSystem);
 
 world.createEntity(testrender);
 testrender.components.sprite.sprite = "32";
-testrender.components.position.x = "48";
-testrender.components.position.y = "24";
+testrender.components.position.x = 48;
+testrender.components.position.y = 24;
 
 
 initializeCanvas(document.getElementById("canvas"));
@@ -46,6 +46,7 @@ initializeKeyboard();
 loadSprites(main);
 
 function main() {
-    console.log(sprites);
+    world.tick();
+    testrender.components.position.x = 80;
     world.tick();
 }
