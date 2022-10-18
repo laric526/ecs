@@ -1,6 +1,10 @@
+const SPRITES_FOLDER = "../../img/sprites/"
+
 export const sprites = {};
 
-
+const files = [
+    "../../img/sprites/32.png"
+];
 
 export function loadSprites(callback) {
     const imageUrls = [
@@ -8,7 +12,7 @@ export function loadSprites(callback) {
         "http://placekitten.com/85/130",
         "http://placekitten.com/85/110",
     ];
-    Promise.all(imageUrls.map(loadImage)).then(images => {
+    Promise.all(files.map(loadImage)).then(images => {
         const canvas = document.createElement("canvas");
         document.body.appendChild(canvas);
         const ctx = canvas.getContext("2d");
