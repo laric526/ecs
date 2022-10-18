@@ -21,3 +21,6 @@ window.onerror = function(error, url, line) {
     li.innerHTML = `Error: ${error} on line ${line} of file ${url}.`;
     consoleElement.appendChild(li);
 };
+
+console.log('a');
+console.error("err");
