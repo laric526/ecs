@@ -1,4 +1,4 @@
-const BACKGROUND_COLOR = "cream"
+const BACKGROUND_COLOR = "bisque"
 
 var ctx;
 
