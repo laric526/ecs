@@ -14,7 +14,6 @@ export function loadSprites(callback) {
         images.forEach((image, i) => {
             const name = files[i];
             sprites[name] = image;
-            console.log(image.width);
         });
 
         callback();
