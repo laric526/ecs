@@ -10,8 +10,8 @@ export function drawSprite(sprite, x, y, angle) {
     const height = sprite.height;
 
     ctx.translate(x, y);
-    context.rotate(angle);
-    context.drawImage(sprite, -width / 2, -height / 2, width, height);
-    context.rotate(-angle);
-    context.translate(-x, -y);
+    ctx.rotate(angle);
+    ctx.drawImage(sprite, -width / 2, -height / 2, width, height);
+    ctx.rotate(-angle);
+    ctx.translate(-x, -y);
 }
