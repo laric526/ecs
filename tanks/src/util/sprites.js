@@ -14,7 +14,7 @@ export function loadSprites(callback) {
         const ctx = canvas.getContext("2d");
         images.forEach((image, i) => {
             const url = imageUrls[i];
-            alert(`Loaded image: ${url}`);
+            console.log(`Loaded image: ${url}`);
         });
     });
 }

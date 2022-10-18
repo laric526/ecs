@@ -8,6 +8,7 @@ import { inputComponent } from "./components.js";
 import { inputSystem } from "./systems.js";
 import { velocitySystem } from "./systems.js";
 import { initializeKeyboard } from "./util/keyboard.js";
+import { loadSprites } from "./util/sprites.js";
 
 const world = new World();
 
@@ -22,3 +23,5 @@ world.registerSystem(velocitySystem);
 world.registerSystem(inputSystem);
 
 initializeKeyboard();
+
+loadSprites()
