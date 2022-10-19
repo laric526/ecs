@@ -6,5 +6,5 @@ export const velocityComponent = new Component("velocity", {
 });
 
 export const rotationVelocityComponent = new Component("rotation_velocity", {
-    velocity: Number,
+    velocity: Number
 });
