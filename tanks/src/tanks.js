@@ -6,7 +6,7 @@ import { rotationComponent } from "./components/rotation.js";
 import { speedComponent, rotationSpeedComponent } from "./components/speed.js";
 import { spriteComponent } from "./components/sprite.js";
 import { tankComponent } from "./components/tank.js";
-import { velocityComponent } from "./components/velocity.js";
+import { velocityComponent, rotationVelocityComponent } from "./components/velocity.js";
 import { playerControlledComponent, renderComponent } from "./components/tags.js";
 
 import { inputSystem } from "./systems/input.js";
