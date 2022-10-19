@@ -12,7 +12,7 @@ import { playerControlledComponent, renderComponent } from "./components/tags.js
 import { inputSystem } from "./systems/input.js";
 import { movementSystem } from "./systems/movement.js";
 import { renderSystem } from "./systems/render.js";
-import { velocitySystem } from "./systems/velocity.js";
+import { velocitySystem, rotationVelocitySystem } from "./systems/velocity.js";
 
 import { testrender } from "./entities.js";
 
@@ -39,6 +39,7 @@ world.registerSystem(inputSystem);
 world.registerSystem(movementSystem);
 world.registerSystem(renderSystem);
 world.registerSystem(velocitySystem);
+world.registerSystem(rotationVelocitySystem);
 
 world.createEntity(testrender);
 testrender.components.sprite.sprite = "32";
