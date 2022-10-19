@@ -8,7 +8,5 @@ export const movementSystem = new System("movement",
 
         entity.components.velocity.x = x;
         entity.components.velocity.y = y;
-        
-        console.log(entity.components.velocity);
     }
 );
