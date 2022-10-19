@@ -7,5 +7,7 @@ export const movementSystem = new System("movement",
 
         entity.components.velocity.x = Math.sin(direction);
         entity.components.velocity.y = -Math.cos(direction);
+
+        console.log(entity.components.velocity);
     }
 );
