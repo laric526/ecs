@@ -46,6 +46,7 @@ testrender.components.sprite.sprite = "32";
 testrender.components.position.x = 48;
 testrender.components.position.y = 24;
 testrender.components.speed.speed = 2;
+testrender.components.rotation_speed.speed = 3.5;
 
 
 initializeCanvas(document.getElementById("canvas"));
