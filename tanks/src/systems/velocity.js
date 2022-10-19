@@ -6,5 +6,7 @@ export const velocitySystem = new System("velocity", ["position", "velocity"], (
 });
 
 export const rotationVelocitySystem = new System("rotation_velocity", ["rotation", "rotation_velocity"], (entity) => {
-    entity.components.rotation.angle += entity.components.rotation_velocity.velocity;
+    const degrees = entity.components.rotation.angle * 180 / Math.PI;
+    
+    entity.components.rotation.angle = (degrees + entity.components.rotation_velocity.velocity) * Math.PI / 180;
 });
