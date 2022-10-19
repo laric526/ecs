@@ -42,12 +42,6 @@ world.registerSystem(velocitySystem);
 world.registerSystem(rotationVelocitySystem);
 
 world.createEntity(playerEntity);
-playerEntity.components.sprite.sprite = "32";
-playerEntity.components.position.x = 48;
-playerEntity.components.position.y = 24;
-playerEntity.components.speed.speed = 2;
-playerEntity.components.rotation_speed.speed = 3.5;
-
 
 initializeCanvas(document.getElementById("canvas"));
 initializeKeyboard();
