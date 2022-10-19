@@ -3,6 +3,7 @@ import { World } from "../../src/world.js";
 import { inputComponent } from "./components/input.js";
 import { positionComponent } from "./components/position.js";
 import { rotationComponent } from "./components/rotation.js";
+import { speedComponent } from "./components/speed.js";
 import { spriteComponent } from "./components/sprite.js";
 import { tankComponent } from "./components/tank.js";
 import { velocityComponent } from "./components/velocity.js";
@@ -23,7 +24,8 @@ export const world = new World();
 
 world.registerComponent(inputComponent);
 world.registerComponent(positionComponent);
-world.registerComponent(rotationComponent)
+world.registerComponent(rotationComponent);
+world.registerComponent(speedComponent);
 world.registerComponent(spriteComponent);
 world.registerComponent(tankComponent);
 world.registerComponent(velocityComponent);
@@ -40,6 +42,7 @@ world.createEntity(testrender);
 testrender.components.sprite.sprite = "32";
 testrender.components.position.x = 48;
 testrender.components.position.y = 24;
+testrender.components.speed.speed = 2;
 
 
 initializeCanvas(document.getElementById("canvas"));
