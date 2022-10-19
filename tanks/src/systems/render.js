@@ -11,7 +11,5 @@ export const renderSystem = new System("render", ["sprite", "position", "render"
     var angle = 0;
     if (entity.components.rotation) { angle = entity.components.rotation.angle }
 
-    console.log(angle);
-
     drawSprite(sprite, x, y, angle);
 });

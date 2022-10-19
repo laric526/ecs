@@ -9,6 +9,6 @@ export const movementSystem = new System("movement",
         entity.components.velocity.x = x * entity.components.speed.speed;
         entity.components.velocity.y = y * entity.components.speed.speed;
 
-        entity.rotation_velocity.velocity = entity.components.input.axes.lateral * entity.components.rotation_speed.speed;
+        entity.components.rotation_velocity.velocity = entity.components.input.axes.lateral * entity.components.rotation_speed.speed;
     }
 );
