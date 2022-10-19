@@ -14,10 +14,12 @@ export function World() {
 
         entity.components = components;
 
-        if (!entity.callback) { entity.callback = () => {} }
-        entity.callback();
-        
-        delete entity.callback;
+        if (entity.callback) {
+            const callback = entity.callback.bind(entity);
+            callback();
+            
+            delete entity.callback;
+        }
 
         this.entities[entity.id] = entity;
     }
