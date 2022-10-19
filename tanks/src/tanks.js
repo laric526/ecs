@@ -20,6 +20,8 @@ import { initializeCanvas, clearCanvas } from "./util/canvas.js";
 import { initializeKeyboard } from "./util/keyboard.js";
 import { sprites, loadSprites } from "./util/sprites.js";
 
+import { duplicateEntity } from "../../src/entity.js";
+
 export const world = new World();
 
 world.registerComponent(inputComponent);
@@ -42,6 +44,12 @@ world.registerSystem(velocitySystem);
 world.registerSystem(rotationVelocitySystem);
 
 world.createEntity(playerEntity);
+
+const player2 = duplicateEntity(playerEntity);
+console.log(player2);
+world.createEntity(player2);
+console.log(player2);
+console.log(world.entities);
 
 initializeCanvas(document.getElementById("canvas"));
 initializeKeyboard();
