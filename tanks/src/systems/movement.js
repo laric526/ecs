@@ -4,7 +4,7 @@ export const movementSystem = new System("movement",
     ["rotation", "velocity", "input", "player_controlled"],
     (entity) => {
         console.log(entity);
-        const direction = angle * entity.components.input.axes.longitudinal;
+        const direction = entity.components.rotation.angle * entity.components.input.axes.longitudinal;
         console.log(direction);
 
         entity.components.velocity.x = Math.sin(direction);
