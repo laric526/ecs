@@ -14,7 +14,7 @@ import { movementSystem } from "./systems/movement.js";
 import { renderSystem } from "./systems/render.js";
 import { velocitySystem, rotationVelocitySystem } from "./systems/velocity.js";
 
-import { testrender } from "./entities.js";
+import { playerEntity } from "./entities.js";
 
 import { initializeCanvas, clearCanvas } from "./util/canvas.js";
 import { initializeKeyboard } from "./util/keyboard.js";
@@ -41,12 +41,12 @@ world.registerSystem(renderSystem);
 world.registerSystem(velocitySystem);
 world.registerSystem(rotationVelocitySystem);
 
-world.createEntity(testrender);
-testrender.components.sprite.sprite = "32";
-testrender.components.position.x = 48;
-testrender.components.position.y = 24;
-testrender.components.speed.speed = 2;
-testrender.components.rotation_speed.speed = 3.5;
+world.createEntity(playerEntity);
+playerEntity.components.sprite.sprite = "32";
+playerEntity.components.position.x = 48;
+playerEntity.components.position.y = 24;
+playerEntity.components.speed.speed = 2;
+playerEntity.components.rotation_speed.speed = 3.5;
 
 
 initializeCanvas(document.getElementById("canvas"));
