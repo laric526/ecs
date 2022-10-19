@@ -50,7 +50,6 @@ loadSprites(main);
 function main() {
     clearCanvas();
     world.tick();
-    clearCanvas();
-    testrender.components.position.x = 80;
-    world.tick();
+
+    requestAnimationFrame(main);
 }
