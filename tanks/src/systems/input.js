@@ -7,8 +7,8 @@ export const inputSystem = new System("input", ["input"], (entity) => {
     if (keymap.s) { longitudinal-- }
 
     let lateral = 0;
-    if (keymap.a) { longitudinal-- }
-    if (keymap.d) { longitudinal++ }
+    if (keymap.a) { lateral-- }
+    if (keymap.d) { lateral++ }
 
     entity.components.input.axes.longitudinal = longitudinal;
     entity.components.input.axes.lateral = lateral;
