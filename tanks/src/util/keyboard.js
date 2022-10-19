@@ -8,7 +8,7 @@ export function initializeKeyboard() {
     }
 
     window.onkeyup = (event) => {
-        const key = event.key.toLowerCase();
+        let key = event.key.toLowerCase();
         if (key == " ") { key = "space" }
         keymap[key] = false;
     }
