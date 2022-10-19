@@ -9,6 +9,7 @@ import { velocityComponent } from "./components/velocity.js";
 import { renderComponent, playerControlledComponent } from "./components/tags.js";
 
 import { inputSystem } from "./systems/input.js";
+import { movementSystem } from "./systems/movement.js";
 import { renderSystem } from "./systems/render.js";
 import { velocitySystem } from "./systems/velocity.js";
 
@@ -30,9 +31,10 @@ world.registerComponent(velocityComponent);
 world.registerComponent(renderComponent);
 world.registerComponent(playerControlledComponent);
 
-world.registerSystem(velocitySystem);
-world.registerSystem(renderSystem);
 world.registerSystem(inputSystem);
+world.registerSystem(movementSystem);
+world.registerSystem(renderSystem);
+world.registerSystem(velocitySystem);
 
 world.createEntity(testrender);
 testrender.components.sprite.sprite = "32";
