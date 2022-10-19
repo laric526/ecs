@@ -5,8 +5,10 @@ export const movementSystem = new System("movement",
     (entity) => {
         console.log(entity);
         const direction = angle * entity.components.input.axes.longitudinal;
+        console.log(direction);
 
         entity.components.velocity.x = Math.sin(direction);
         entity.components.velocity.y = -Math.cos(direction);
+        console.log(entity);
     }
 );
