@@ -2,7 +2,7 @@ import { System } from "../../../src/system.js";
 import { drawSprite } from "../util/canvas.js";
 import { sprites } from "../util/sprites.js";
 
-export const renderSystem = new System("render", ["sprite", "render", "position"], (entity) => {
+export const renderSystem = new System("render", ["sprite", "position", "render"], (entity) => {
     const sprite = sprites[entity.components.sprite.sprite];
 
     const x = entity.components.position.x;

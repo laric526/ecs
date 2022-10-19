@@ -7,7 +7,7 @@ import { speedComponent, rotationSpeedComponent } from "./components/speed.js";
 import { spriteComponent } from "./components/sprite.js";
 import { tankComponent } from "./components/tank.js";
 import { velocityComponent } from "./components/velocity.js";
-import { renderComponent, playerControlledComponent } from "./components/tags.js";
+import { playerControlledComponent, renderComponent } from "./components/tags.js";
 
 import { inputSystem } from "./systems/input.js";
 import { movementSystem } from "./systems/movement.js";
@@ -30,9 +30,10 @@ world.registerComponent(rotationSpeedComponent);
 world.registerComponent(spriteComponent);
 world.registerComponent(tankComponent);
 world.registerComponent(velocityComponent);
+world.registerComponent(rotationVelocityComponent);
 
-world.registerComponent(renderComponent);
 world.registerComponent(playerControlledComponent);
+world.registerComponent(renderComponent);
 
 world.registerSystem(inputSystem);
 world.registerSystem(movementSystem);
