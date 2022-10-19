@@ -14,18 +14,26 @@ export function World() {
 
         entity.components = components;
 
-        if (entity.callback) {
-            const callback = entity.callback.bind(entity);
-            callback();
-            
-            delete entity.callback;
-        }
+        const callback = entity.callback.bind(entity);
+        callback();
 
         this.entities[entity.id] = entity;
     }
 
+    this.getEntity = function(id) {
+        return this.entities[id];
+    }
+
     this.removeEntity = function(entityId) {
         delete this.entities[entityId];
+    }
+
+    this.registerComponent = function(component) {
+        this.components[component.name] = component;
+    }
+
+    this.getComponent = function(name) {
+        return this.components[name];
     }
 
     this.addComponentToEntity = function(entityId, componentName) {
@@ -37,20 +45,8 @@ export function World() {
         delete this.entities[entityId].components[componentName];
     }
 
-    this.registerComponent = function(component) {
-        this.components[component.name] = component;
-    }
-
     this.registerSystem = function(system) {
         this.systems[system.name] = system;
-    }
-
-    this.getEntity = function(id) {
-        return this.entities[id];
-    }
-
-    this.getComponent = function(name) {
-        return this.components[name];
     }
 
     this.filterEntities = function(query) {
