@@ -21,6 +21,7 @@ import { playerEntity, playerGunEntity } from "./entities.js";
 
 import { initializeCanvas, clearCanvas } from "./util/canvas.js";
 import { initializeKeyboard } from "./util/keyboard.js";
+import { initializeMouse } from "./util/mouse.js";
 import { sprites, loadSprites } from "./util/sprites.js";
 
 import { duplicateEntity } from "../../src/entity.js";
@@ -56,6 +57,7 @@ world.createEntity(playerGunEntity);
 
 initializeCanvas(document.getElementById("canvas"));
 initializeKeyboard();
+initializeMouse();
 
 loadSprites(main);
 
