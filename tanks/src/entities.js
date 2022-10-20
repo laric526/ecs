@@ -16,6 +16,5 @@ export const playerGunEntity = new Entity(
     (entity) => {
         entity.components.attachment.parent = playerEntity.id; // this is bad lmao
         entity.components.sprite.sprite = "cannon";
-        entity.components.sprite.offset.y = -10;
     }
 );
