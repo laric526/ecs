@@ -3,4 +3,8 @@ canvas {
 
     width: 512px;
     height: 512px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
 }
