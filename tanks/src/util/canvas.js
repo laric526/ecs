@@ -20,8 +20,8 @@ export function initializeCanvas(canvas) {
 }
 
 export function drawSprite(sprite, x, y, angle) {
-    const width = sprite.width;
-    const height = sprite.height;
+    const width = sprite.width * renderScale;
+    const height = sprite.height * renderScale;
 
     ctx.translate(x, y);
     ctx.rotate(angle);
