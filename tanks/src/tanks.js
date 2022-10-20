@@ -15,7 +15,7 @@ import { movementSystem } from "./systems/movement.js";
 import { renderSystem } from "./systems/render.js";
 import { velocitySystem, rotationVelocitySystem } from "./systems/velocity.js";
 
-import { playerEntity } from "./entities.js";
+import { playerEntity, playerGunEntity } from "./entities.js";
 
 import { initializeCanvas, clearCanvas } from "./util/canvas.js";
 import { initializeKeyboard } from "./util/keyboard.js";
@@ -47,6 +47,7 @@ world.registerSystem(velocitySystem);
 world.registerSystem(rotationVelocitySystem);
 
 world.createEntity(playerEntity);
+world.createEntity(playerGunEntity);
 
 initializeCanvas(document.getElementById("canvas"));
 initializeKeyboard();

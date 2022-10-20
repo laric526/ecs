@@ -10,3 +10,11 @@ export const playerEntity = new Entity(
         entity.components.rotation_speed.speed = 3.5;
     }
 );
+
+export const playerGunEntity = new Entity(
+    ["attachment", "position", "rotation", "sprite", "attached", "render"],
+    (entity) => {
+        entity.components.attachment.parent = playerEntity.id; // this is bad lmao
+        entity.components.sprite.sprite = "32";
+    }
+);
