@@ -6,6 +6,7 @@ export const pointAtMouseSystem = new System("point_at_mouse", ["position", "rot
     const y = entity.component.position.y;
 
     const angle = Math.atan2(mouse.pos.y - y, mouse.pos.x - x) + Math.PI / 2;
+    console.log(angle);
 
     entity.component.rotation.angle = angle;
 });
