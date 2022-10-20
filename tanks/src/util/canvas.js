@@ -23,11 +23,11 @@ export function drawSprite(sprite, x, y, angle) {
     const width = sprite.width;
     const height = sprite.height;
 
-    ctx.translate(x * renderScale, y * renderScale);
+    ctx.translate(x, y);
     ctx.rotate(angle);
-    ctx.drawImage(sprite, -width / 2, -height / 2, width * renderScale, height * renderScale);
+    ctx.drawImage(sprite, -width / 2, -height / 2, width, height);
     ctx.rotate(-angle);
-    ctx.translate(-x * renderScale, -y * renderScale);
+    ctx.translate(-x, -y);
 }
 
 export function clearCanvas() {
