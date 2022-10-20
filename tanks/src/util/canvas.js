@@ -5,6 +5,7 @@ var ctx;
 const width = 256;
 const height = 256;
 
+const renderScale = 4;
 export var canvasScale = 1;
 
 export function initializeCanvas(canvas) {
@@ -22,11 +23,11 @@ export function drawSprite(sprite, x, y, angle) {
     const width = sprite.width;
     const height = sprite.height;
 
-    ctx.translate(x, y);
+    ctx.translate(x * renderScale, y * renderScale);
     ctx.rotate(angle);
-    ctx.drawImage(sprite, -width / 2, -height / 2, width, height);
+    ctx.drawImage(sprite, -width / 2, -height / 2, width * renderScale, height * renderScale);
     ctx.rotate(-angle);
-    ctx.translate(-x, -y);
+    ctx.translate(-x * renderScale, -y * renderScale);
 }
 
 export function clearCanvas() {
