@@ -1,4 +1,4 @@
-import { canvasScale } from "./canvas";
+import { canvasScale } from "./canvas.js";
 
 export const mouse = {
     pos: {
