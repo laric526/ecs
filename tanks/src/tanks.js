@@ -10,6 +10,7 @@ import { tankComponent } from "./components/tank.js";
 import { velocityComponent, rotationVelocityComponent } from "./components/velocity.js";
 import { attachedComponent, playerControlledComponent, renderComponent } from "./components/tags.js";
 
+import { attachmentSystem } from "./systems/attachment.js";
 import { inputSystem } from "./systems/input.js";
 import { movementSystem } from "./systems/movement.js";
 import { renderSystem } from "./systems/render.js";
@@ -40,6 +41,7 @@ world.registerComponent(attachedComponent);
 world.registerComponent(playerControlledComponent);
 world.registerComponent(renderComponent);
 
+world.registerSystem(attachmentSystem);
 world.registerSystem(inputSystem);
 world.registerSystem(movementSystem);
 world.registerSystem(renderSystem);
