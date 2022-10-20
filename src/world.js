@@ -14,9 +14,7 @@ export function World() {
 
         entity.components = components;
 
-        const callback = entity.callback;
-        const boundCallback = callback.bind(entity);
-        boundCallback();
+        entity.callback.call(entity);
 
         this.entities[entity.id] = entity;
     }
