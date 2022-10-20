@@ -3,7 +3,7 @@ import { Entity } from "../../src/entity.js";
 export const playerEntity = new Entity(
     ["input", "position", "rotation", "speed", "rotation_speed", "sprite", "velocity", "rotation_velocity", "player_controlled", "render"],
     (entity) => {
-        entity.components.sprite.sprite = "32";
+        entity.components.sprite.sprite = "tank";
         entity.components.position.x = 48;
         entity.components.position.y = 24;
         entity.components.speed.speed = 2;
