@@ -1,9 +1,10 @@
 import { World } from "../../src/world.js";
 
+import { attachmentComponent } from "./components/attachment.js";
 import { inputComponent } from "./components/input.js";
 import { positionComponent } from "./components/position.js";
 import { rotationComponent } from "./components/rotation.js";
-import { speedComponent, rotationSpeedComponent } from "./components/speed.js";
+import { attachedComponent, speedComponent, rotationSpeedComponent } from "./components/speed.js";
 import { spriteComponent } from "./components/sprite.js";
 import { tankComponent } from "./components/tank.js";
 import { velocityComponent, rotationVelocityComponent } from "./components/velocity.js";
@@ -24,6 +25,7 @@ import { duplicateEntity } from "../../src/entity.js";
 
 export const world = new World();
 
+world.registerComponent(attachmentComponent);
 world.registerComponent(inputComponent);
 world.registerComponent(positionComponent);
 world.registerComponent(rotationComponent);
@@ -34,6 +36,7 @@ world.registerComponent(tankComponent);
 world.registerComponent(velocityComponent);
 world.registerComponent(rotationVelocityComponent);
 
+world.registerComponent(attachedComponent);
 world.registerComponent(playerControlledComponent);
 world.registerComponent(renderComponent);
 
@@ -44,12 +47,6 @@ world.registerSystem(velocitySystem);
 world.registerSystem(rotationVelocitySystem);
 
 world.createEntity(playerEntity);
-
-const player2 = duplicateEntity(playerEntity);
-console.log(player2);
-world.createEntity(player2);
-console.log(player2);
-console.log(world.entities);
 
 initializeCanvas(document.getElementById("canvas"));
 initializeKeyboard();
