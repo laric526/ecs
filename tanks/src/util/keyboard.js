@@ -1,15 +1,15 @@
 export const keymap = {};
 
 export function initializeKeyboard() {
-    window.onkeydown = (event) => {
+    window.addEventListener("keydown", (event) => {
         let key = event.key.toLowerCase();
         if (key == " ") { key = "space" }
         keymap[key] = true;
-    }
+    });
 
-    window.onkeyup = (event) => {
+    window.addEventListener("keyup", (event) => {
         let key = event.key.toLowerCase();
         if (key == " ") { key = "space" }
         keymap[key] = false;
-    }
+    });
 }
