@@ -8,8 +8,11 @@ export const renderSystem = new System("render", ["sprite", "position", "render"
     const x = entity.components.position.x;
     const y = entity.components.position.y;
 
+    const offsetX = entity.components.sprite.offset.x;
+    const offsetY = entity.components.sprite.offset.y;
+
     var angle = 0;
     if (entity.components.rotation) { angle = entity.components.rotation.angle }
 
-    drawSprite(sprite, x, y, angle);
+    drawSprite(sprite, x + offsetX, y + offsetY, angle);
 });
