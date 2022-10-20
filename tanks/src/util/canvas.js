@@ -2,8 +2,14 @@ const BACKGROUND_COLOR = "bisque"
 
 var ctx;
 
+const width = 256; // set to screen at some point
+const height = 256; // set to screen at some point
+
 export function initializeCanvas(canvas) {
+    canvas.width = width;
+    canvas.height = height;
     canvas.style.backgroundColor = "red";
+
     ctx = canvas.getContext("2d");
 }
 
