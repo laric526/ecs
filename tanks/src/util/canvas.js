@@ -2,8 +2,8 @@ const BACKGROUND_COLOR = "bisque"
 
 var ctx;
 
-const width = 256; // set to screen at some point
-const height = 256; // set to screen at some point
+const width = 256;
+const height = 256;
 
 export var canvasScale = 1;
 
