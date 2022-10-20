@@ -26,8 +26,6 @@ import { sprites, loadSprites } from "./util/sprites.js";
 
 import { duplicateEntity } from "../../src/entity.js";
 
-console.log("All imports complete!");
-
 export const world = new World();
 
 world.registerComponent(attachmentComponent);
@@ -64,10 +62,8 @@ initializeMouse();
 loadSprites(main);
 
 function main() {
-    console.log("Pre tick");
     clearCanvas();
     world.tick();
-    console.log("Post tick");
 
     requestAnimationFrame(main);
 }
