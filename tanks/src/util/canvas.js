@@ -5,9 +5,14 @@ var ctx;
 const width = 256; // set to screen at some point
 const height = 256; // set to screen at some point
 
+export var canvasScale = 1;
+
 export function initializeCanvas(canvas) {
     canvas.width = width;
     canvas.height = height;
+
+    canvasScale = canvas.scrollHeight / height;
+
     canvas.style.backgroundColor = "red";
 
     ctx = canvas.getContext("2d");
