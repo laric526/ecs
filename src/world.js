@@ -14,7 +14,7 @@ export function World() {
 
         entity.components = components;
 
-        entity.callback(entity, world);
+        entity.callback(entity, this);
 
         this.entities[entity.id] = entity;
     }
@@ -69,7 +69,7 @@ export function World() {
         systemNames.forEach((name, i) => {
             const system = this.systems[name];
             const entities = this.filterEntities(system.query);
-            entities.forEach((entity, i) => system.callback(entity, i));
+            entities.forEach((entity, i) => system.callback(entity, this, i));
         });
     }
 }
