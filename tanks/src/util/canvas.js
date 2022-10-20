@@ -7,16 +7,13 @@ const renderScale = 4;
 const width = 256;
 const height = 256;
 
-const renderWidth = width * renderScale;
-const renderHeight = height * renderScale;
-
 export var canvasScale = 1;
 
 export function initializeCanvas(canvas) {
-    canvas.width = renderWidth;
-    canvas.height = renderHeight;
+    canvas.width = width * renderScale;
+    canvas.height = height * renderScale;
 
-    canvasScale = canvas.scrollHeight / height;
+    canvasScale = canvas.scrollHeight / canvas.height;
 
     canvas.style.backgroundColor = "red";
 
@@ -35,8 +32,8 @@ export function drawSprite(sprite, x, y, angle) {
 }
 
 export function clearCanvas() {
-    const width = renderWidth;
-    const height = renderHeight;
+    const width = ctx.canvas.width;
+    const height = ctx.canvas.height;
 
     ctx.fillStyle = BACKGROUND_COLOR;
     ctx.fillRect(0, 0, width, height);
