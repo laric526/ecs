@@ -18,6 +18,8 @@ export function initializeCanvas(canvas) {
     canvas.style.backgroundColor = "red";
 
     ctx = canvas.getContext("2d");
+
+    ctx.imageSmoothingEnabled = false;
 }
 
 export function drawSprite(sprite, x, y, angle) {
