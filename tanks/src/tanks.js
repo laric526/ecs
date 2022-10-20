@@ -64,8 +64,10 @@ initializeMouse();
 loadSprites(main);
 
 function main() {
+    console.log("Pre tick");
     clearCanvas();
     world.tick();
+    console.log("Post tick");
 
     requestAnimationFrame(main);
 }
