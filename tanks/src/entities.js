@@ -9,6 +9,8 @@ export const playerEntity = new Entity(
         entity.components.speed.speed = 2;
         entity.components.rotation_speed.speed = 3.5;
 
+        console.log("created player");
+
         world.createEntity(playerCannonEntity);
     }
 );
@@ -18,5 +20,7 @@ const playerCannonEntity = new Entity(
     (entity) => {
         entity.components.attachment.parent = playerEntity.id;
         entity.components.sprite.sprite = "tanks/red_cannon";
+
+        console.log("created cannon");
     }
 );

@@ -5,6 +5,8 @@ import { sprites } from "../util/sprites.js";
 export const renderSystem = new System("render", ["sprite", "position", "render"], (entity) => {
     const sprite = sprites[entity.components.sprite.sprite];
 
+    console.log(sprite);
+
     const x = entity.components.position.x;
     const y = entity.components.position.y;
 
