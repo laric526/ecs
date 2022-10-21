@@ -10,10 +10,14 @@ export const fireSystem = new System("fire", ["input", "position", "rotation", "
         const angle = cannon.components.rotation.angle;
 
         const missile = world.createEntity(duplicateEntity(missileEntity));
+
         missile.components.position.x = entity.components.position.x;
         missile.components.position.y = entity.components.position.y;
+
+        missile.components.velocity.x = Math.sin(angle);
+        missile.components.velocity.y = -Math.cos(angle);
+
         missile.components.rotation.angle = angle;
-        missile.components.velocity.y = 1;
 
         fired = true;
     }
