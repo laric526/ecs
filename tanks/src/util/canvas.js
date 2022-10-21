@@ -2,7 +2,7 @@ const BACKGROUND_COLOR = "bisque"
 
 var ctx;
 
-const renderScale = 4;
+const renderScale = 2;
 
 const width = 256;
 const height = 256;
