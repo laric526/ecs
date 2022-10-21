@@ -12,7 +12,7 @@ export const playerEntity = new Entity(
         console.log("created player");
         console.log(`This in player creation: ${Object.getOwnPropertyNames(this)}`);
 
-        world.createEntity(playerCannonEntity);
+        world.createEntity.bind(world, playerCannonEntity)();
     }
 );
 
