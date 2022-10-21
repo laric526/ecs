@@ -6,8 +6,8 @@ export const playerEntity = new Entity(
         entity.components.sprite.sprite = "tanks/red";
         entity.components.position.x = 8;
         entity.components.position.y = 8;
-        entity.components.speed.speed = 2;
-        entity.components.rotation_speed.speed = 3.5;
+        entity.components.speed.speed = 1;
+        entity.components.rotation_speed.speed = 3;
 
         entity.components.collider.x = 16;
         entity.components.collider.y = 16;
