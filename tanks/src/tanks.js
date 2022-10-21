@@ -53,7 +53,7 @@ world.registerSystem(velocitySystem);
 world.registerSystem(rotationVelocitySystem);
 
 world.createEntity(playerEntity);
-//world.createEntity(playerCannonEntity);
+world.createEntity(playerCannonEntity);
 
 initializeCanvas(document.getElementById("canvas"));
 initializeKeyboard();
