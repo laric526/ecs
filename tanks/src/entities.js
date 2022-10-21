@@ -10,7 +10,7 @@ export const playerEntity = new Entity(
         entity.components.rotation_speed.speed = 3.5;
 
         console.log("created player");
-        console.log(this);
+        console.log(`This in player creation: ${Object.getOwnPropertyNames(this)}`);
 
         world.createEntity(playerCannonEntity);
     }
@@ -23,6 +23,6 @@ export const playerCannonEntity = new Entity(
         entity.components.sprite.sprite = "tanks/red_cannon";
 
         console.log("created cannon");
-        console.log(this);
+        console.log(`This in cannon creation: ${Object.getOwnPropertyNames(this)}`);
     }
 );
