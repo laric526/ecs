@@ -11,11 +11,11 @@ export const playerEntity = new Entity(
 
         console.log("created player");
 
-        world.createEntity(playerCannonEntity);
+        //world.createEntity(playerCannonEntity);
     }
 );
 
-const playerCannonEntity = new Entity(
+export const playerCannonEntity = new Entity(
     ["attachment", "position", "rotation", "sprite", "attached", "point_at_mouse", "render"],
     (entity) => {
         entity.components.attachment.parent = playerEntity.id;
