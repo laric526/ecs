@@ -6,7 +6,8 @@ const spriteScale = 2;
 
 const width = 256;
 const height = 256;
-
+// TODO: use canvas scale insread of render scale in a lot of places
+// previously w/h was 256 and html w/h was 512, 2x scale means they were equal, and i used the wrong one often
 export var canvasScale = 1;
 export const renderScale = 2;
 
