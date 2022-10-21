@@ -2,7 +2,7 @@ import { System } from "../../../src/system.js";
 
 export const collisionSystem = new System("collision", ["collider", "position"], (entity, world, others) => { 
     others.forEach((other) => {
-        if (other.id == entity.id) { continue; }
+        if (other.id == entity.id) { return; }
 
         const left = entity.components.position.x - entity.components.collider.x / 2;
         const right = entity.components.position.x + entity.components.collider.x / 2;
