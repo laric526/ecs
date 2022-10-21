@@ -14,8 +14,8 @@ export const fireSystem = new System("fire", ["input", "position", "rotation", "
         missile.components.velocity.x = Math.sin(angle);
         missile.components.velocity.y = -Math.cos(angle);
 
-        missile.components.position.x = missile.components.velocity.x + entity.components.position.x;
-        missile.components.position.y = missile.components.velocity.y + entity.components.position.y;
+        missile.components.position.x = missile.components.velocity.x * 4 + entity.components.position.x;
+        missile.components.position.y = missile.components.velocity.y * 4 + entity.components.position.y;
 
         missile.components.rotation.angle = angle;
 
