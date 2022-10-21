@@ -2,22 +2,18 @@ const BACKGROUND_COLOR = "bisque"
 
 var ctx;
 
-const spriteScale = 1;
+const size = 16; // how many sprites/tiles wide the canvas should be
 
-const width = 256;
-const height = 256;
-// TODO: use canvas scale insread of render scale in a lot of places
-// previously w/h was 256 and html w/h was 512, 2x scale means they were equal, and i used the wrong one often
-export var canvasScale = 1;
-export const renderScale = 2;
+const pixelResolution = size * 16; // 16 = sprite/tile size
+export var pixelSize;
 
 var renderQueue = [];
 
 export function initializeCanvas(canvas) {
-    canvas.width = width * renderScale;
-    canvas.height = height * renderScale;
+    pixelSize = canvas.scrollHeight / pixelResolution;
 
-    canvasScale = canvas.scrollHeight / canvas.height;
+    canvas.width = pixelResolution * pixelSize;
+    canvas.height = pixelResolution * pixelSize;
 
     canvas.style.backgroundColor = "red";
 
@@ -40,14 +36,14 @@ export function addToRenderQueue(sprite, x, y, angle, zIndex) {
 }
 
 export function drawSprite(sprite, x, y, angle) {
-    const width = sprite.width * renderScale * spriteScale;
-    const height = sprite.height * renderScale * spriteScale;
+    const width = sprite.width * pixelSize;
+    const height = sprite.height * pixelSize;
 
-    ctx.translate(x, y);
+    ctx.translate(x * pixelSize, y * pixelSize);
     ctx.rotate(angle);
     ctx.drawImage(sprite, -width / 2, -height / 2, width, height);
     ctx.rotate(-angle);
-    ctx.translate(-x, -y);
+    ctx.translate(-x * pixelSize, -y * pixelSize);
 }
 
 export function clearCanvas() {

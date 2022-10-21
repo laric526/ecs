@@ -1,4 +1,4 @@
-import { canvasScale, renderScale } from "./canvas.js";
+import { pixelSize } from "./canvas.js";
 
 export const mouse = {
     pos: {
@@ -12,8 +12,8 @@ export const mouse = {
 
 export function initializeMouse() {
     window.addEventListener("mousemove", (event) => {
-        mouse.pos.x = event.x / canvasScale / renderScale;
-        mouse.pos.y = event.y / canvasScale / renderScale;
+        mouse.pos.x = event.x / pixelSize;
+        mouse.pos.y = event.y / pixelSize;
     });
 
     window.addEventListener("mousedown", (event) => {
