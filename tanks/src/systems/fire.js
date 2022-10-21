@@ -2,10 +2,10 @@ import { System } from "../../../src/system.js";
 import { duplicateEntity } from "../../../src/entity.js";
 import { missileEntity } from "../entities.js";
 
-var fired = false;
-
 export const fireSystem = new System("fire", ["input", "position", "rotation", "tank", "player_controlled"], (entity, world) => {
-    if (entity.components.input.fire && !fired) {
+    const reloadTimer = entity.components.tank.reloadTimer;
+
+    if (reloadTimer == 0 && entity.components.input.fire) {
         const cannon = world.getEntity(entity.components.tank.cannon);
         const angle = cannon.components.rotation.angle;
 
@@ -19,6 +19,8 @@ export const fireSystem = new System("fire", ["input", "position", "rotation", "
 
         missile.components.rotation.angle = angle;
 
-        fired = true;
+        reloadTimer = 60; // move to tank comp
+    } else if (reloadTimer > 0) {
+        reloadTimer--;
     }
 });
