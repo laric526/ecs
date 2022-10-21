@@ -28,6 +28,8 @@ export function initializeMouse() {
                 mouse.right = true;
                 break;
         }
+
+        console.log(mouse);
     });
 
     window.addEventListener("mouseup", (event) => {
