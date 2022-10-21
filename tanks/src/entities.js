@@ -16,6 +16,7 @@ export const playerCannonEntity = new Entity(
     (entity) => {
         entity.components.attachment.parent = playerEntity.id;
         entity.components.sprite.sprite = "tanks/red_cannon";
+        entity.components.sprite.zIndex = 1;
 
         playerEntity.components.tank.cannon = entity.id;
     }
