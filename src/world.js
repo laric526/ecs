@@ -17,6 +17,8 @@ export function World() {
         entity.callback(entity, this);
 
         this.entities[entity.id] = entity;
+
+        return entity;
     }
 
     this.getEntity = function(id) {
