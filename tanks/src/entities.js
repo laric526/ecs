@@ -22,7 +22,7 @@ export const playerCannonEntity = new Entity(
 );
 
 export const missileEntity = new Entity(
-    ["position", "rotation", "sprite", "velocity"],
+    ["position", "rotation", "sprite", "velocity", "render"],
     (entity) => {
         entity.components.sprite.sprite = "tanks/red";
     }
