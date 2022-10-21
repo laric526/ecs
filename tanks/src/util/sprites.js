@@ -5,7 +5,9 @@ export const sprites = {};
 const files = [
     "32",
     "cannon",
-    "tank"
+    "tank",
+    "tanks/red",
+    "tanks/red_cannon"
 ];
 
 export function loadSprites(callback) {
