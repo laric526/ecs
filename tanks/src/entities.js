@@ -18,7 +18,7 @@ export const playerEntity = new Entity(
         cannon.components.attachment.parent = entity.id;
         entity.components.tank.cannon = cannon.id;
 
-        entity.collider.collider.type = "tank"
+        entity.components.collider.type = "tank"
     }
 );
 
