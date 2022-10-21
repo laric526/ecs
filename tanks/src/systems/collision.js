@@ -46,8 +46,8 @@ function handleTankCollision(entity, other, world) {
             const yCount = (yOther - 16 - y) / yStep;
 
             var count;
-            if (Math.abs(xCount) < Math.abs(yCount)) { count = xCount }
-            else { count = yCount }
+            if (Math.abs(xCount) < Math.abs(yCount)) { count = Math.abs(xCount); }
+            else { count = Math.abs(yCount); }
             
             const xNew = x + xStep * count;
             const yNew = y + yStep * count;
