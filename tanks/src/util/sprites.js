@@ -3,11 +3,10 @@ const SPRITES_FOLDER = "./img/sprites/"
 export const sprites = {};
 
 const files = [
-    "32",
-    "cannon",
-    "tank",
     "tanks/red",
-    "tanks/red_cannon"
+    "tanks/red_cannon",
+    "tanks/blue",
+    "tanks/blue_cannon"
 ];
 
 export function loadSprites(callback) {
