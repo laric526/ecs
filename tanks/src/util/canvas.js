@@ -53,11 +53,13 @@ export function clearCanvas() {
 }
 
 export function renderCanvas() {
-    renderQueue.forEach((zIndex, i) => {
-        zIndex.forEach((sprite, i) => {
-            drawSprite(sprite.sprite, sprite.x, sprite.y, sprite.angle);
+    if (renderQueue.length > 0) {
+        renderQueue.forEach((zIndex, i) => {
+            zIndex.forEach((sprite, i) => {
+                drawSprite(sprite.sprite, sprite.x, sprite.y, sprite.angle);
+            });
         });
-    });
+    }
 
     renderQueue = [];
 }
