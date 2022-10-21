@@ -18,7 +18,47 @@ export const collisionSystem = new System("collision", ["collider", "position"],
         const horizotal = (otherTop > top && otherTop < bottom) || (otherBottom > top && otherBottom < bottom) || (top > otherTop && top < otherBottom) || (bottom > otherTop && bottom < otherBottom);
         
         if (horizotal && vertical) {
-            console.log(`Collision between ${entity.id} and ${other.id}`);
+            switch (entity.components.collider.type) {
+                case "tank":
+                    handleTankCollision(entity, other, world);
+                    break;
+                case "bullet":
+                    handleBulletCollision(entity, other, world);
+                    break;
+            }
         }
     });
 });
+
+function handleTankCollision(entity, other, world) {
+    switch(other.components.collider.type) {
+        case "wall":
+            const x = entity.components.position.x;
+            const y = entity.components.position.y;
+            const xOther = other.components.position.x;
+            const yOther = other.components.position.y;
+
+            const angle = Math.atan2(y - yOther, x - xOther) + Math.PI / 2;
+            const xStep = Math.sin(angle);
+            const yStep = -Math.cos(angle);
+
+            const xCount = (xOther - 16 - x) / xStep;
+            const yCount = (yOther - 16 - y) / yStep;
+
+            var count;
+            if (Math.abs(xCount) < Math.abs(yCount)) { count = xCount }
+            else { count = yCount }
+            
+            const xNew = x + xStep * count;
+            const yNew = y + yStep * count;
+
+            entity.components.position.x = xNew;
+            entity.components.position.y = yNew;
+
+            break;
+    }
+}
+
+function handleBulletCollision(entity, other, world) {
+
+}

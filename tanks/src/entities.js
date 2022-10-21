@@ -17,6 +17,8 @@ export const playerEntity = new Entity(
         const cannon = world.createEntity(playerCannonEntity);
         cannon.components.attachment.parent = entity.id;
         entity.components.tank.cannon = cannon.id;
+
+        entity.collider.collider.type = "tank"
     }
 );
 
@@ -44,5 +46,6 @@ export const colliderTestEntity = new Entity(
         entity.components.position.y = 128;
         entity.components.collider.x = 16;
         entity.components.collider.y = 16;
+        entity.collider.collider.type = "wall"
     }
 );
