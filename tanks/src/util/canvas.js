@@ -2,7 +2,7 @@ const BACKGROUND_COLOR = "bisque"
 
 var ctx;
 
-const spriteScale = 2;
+const spriteScale = 1;
 
 const width = 256;
 const height = 256;
