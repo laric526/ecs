@@ -9,6 +9,8 @@ const height = 256;
 
 export var canvasScale = 1;
 
+var renderQueue = [];
+
 export function initializeCanvas(canvas) {
     canvas.width = width * renderScale;
     canvas.height = height * renderScale;
@@ -20,6 +22,15 @@ export function initializeCanvas(canvas) {
     ctx = canvas.getContext("2d");
 
     ctx.imageSmoothingEnabled = false;
+}
+
+export function addToRenderQueue(sprite, x, y, angle, zIndex) {
+    renderQueue[zIndex].push({
+        sprite: sprite,
+        x: x,
+        y: y,
+        angle: angle
+    });
 }
 
 export function drawSprite(sprite, x, y, angle) {
@@ -39,4 +50,14 @@ export function clearCanvas() {
 
     ctx.fillStyle = BACKGROUND_COLOR;
     ctx.fillRect(0, 0, width, height);
+}
+
+export function renderCanvas() {
+    renderQueue.forEach((zIndex, i) => {
+        zIndex.forEach((sprite, i) => {
+            drawSprite(sprite.sprite, sprite.x, sprite.y, sprite.angle);
+        });
+    });
+
+    renderQueue = [];
 }

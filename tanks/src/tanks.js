@@ -20,7 +20,7 @@ import { velocitySystem, rotationVelocitySystem } from "./systems/velocity.js";
 
 import { playerEntity, playerCannonEntity } from "./entities.js";
 
-import { initializeCanvas, clearCanvas } from "./util/canvas.js";
+import { initializeCanvas, clearCanvas, renderCanvas } from "./util/canvas.js";
 import { initializeKeyboard } from "./util/keyboard.js";
 import { initializeMouse } from "./util/mouse.js";
 import { sprites, loadSprites } from "./util/sprites.js";
@@ -65,8 +65,9 @@ initializeMouse();
 loadSprites(main);
 
 function main() {
-    clearCanvas();
     world.tick();
+    clearCanvas();
+    renderCanvas();
 
     requestAnimationFrame(main);
 }
