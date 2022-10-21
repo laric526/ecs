@@ -60,6 +60,9 @@ world.registerSystem(rotationVelocitySystem);
 
 world.createEntity(playerEntity);
 
+import { colliderTestEntity } from "./entities.js";
+world.createEntity(colliderTestEntity);
+
 initializeCanvas(document.getElementById("canvas"));
 initializeKeyboard();
 initializeMouse();

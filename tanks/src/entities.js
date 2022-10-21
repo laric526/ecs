@@ -35,3 +35,14 @@ export const missileEntity = new Entity(
         entity.components.sprite.zIndex = 1;
     }
 );
+
+export const colliderTestEntity = new Entity(
+    ["collider", "position", "sprite", "render"],
+    (entity) => {
+        entity.components.sprite.sprite = "tanks/blue";
+        entity.components.position.x = 128;
+        entity.components.position.y = 128;
+        entity.components.collider.x = 16;
+        entity.components.collider.y = 16;
+    }
+);
