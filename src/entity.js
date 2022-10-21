@@ -10,7 +10,7 @@ export function Entity(components, callback) {
 
 export function duplicateEntity(entity) {
     if (entity.components instanceof Array) {
-        return new Entity(structuredClone(entity,components), entity.callback);
+        return new Entity(structuredClone(entity.components), entity.callback);
     }
 
     const components = Object.getOwnPropertyNames(entity.components)
