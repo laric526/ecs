@@ -25,6 +25,8 @@ export function initializeCanvas(canvas) {
 }
 
 export function addToRenderQueue(sprite, x, y, angle, zIndex) {
+    zIndex += 100;
+    
     if (!renderQueue[zIndex]) { renderQueue[zIndex] = []; }
     
     renderQueue[zIndex].push({
