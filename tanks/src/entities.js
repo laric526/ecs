@@ -11,7 +11,7 @@ export const playerEntity = new Entity(
 
         console.log("created player");
 
-        //world.createEntity(playerCannonEntity);
+        world.createEntity(playerCannonEntity);
     }
 );
 
