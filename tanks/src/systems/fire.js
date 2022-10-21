@@ -19,7 +19,7 @@ export const fireSystem = new System("fire", ["input", "position", "rotation", "
 
         missile.components.rotation.angle = angle;
 
-        entity.components.tank.reloadTimer = 60; // move to tank comp
+        entity.components.tank.reloadTimer = entity.components.tank.reloadTime;
     } else if (reloadTimer > 0) {
         entity.components.tank.reloadTimer--;
     }
