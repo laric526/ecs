@@ -6,8 +6,6 @@ export function World() {
     this.systems = {};
 
     this.createEntity = function(entity) {
-        console.log(`This in entity creation: ${Object.getOwnPropertyNames(this)}`);
-
         const components = {};
         entity.components.forEach((componentName, i) => {
             const component = this.getComponent(componentName);
