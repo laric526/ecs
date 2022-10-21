@@ -12,8 +12,8 @@ export const mouse = {
 
 export function initializeMouse() {
     window.addEventListener("mousemove", (event) => {
-        mouse.pos.x = event.x / canvasScale * renderScale;
-        mouse.pos.y = event.y / canvasScale * renderScale;
+        mouse.pos.x = event.x / canvasScale / renderScale;
+        mouse.pos.y = event.y / canvasScale / renderScale;
     });
 
     window.addEventListener("mousedown", (event) => {
