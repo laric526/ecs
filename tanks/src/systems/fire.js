@@ -17,13 +17,6 @@ export const fireSystem = new System("fire", ["input", "position", "rotation", "
         missile.components.position.x = missile.components.velocity.x * 6 + entity.components.position.x;
         missile.components.position.y = missile.components.velocity.y * 6 + entity.components.position.y;
 
-
-
-        missile.components.velocity.x = 0;
-        missile.components.velocity.y = 0;
-
-
-
         missile.components.rotation.angle = angle;
 
         entity.components.tank.reloadTimer = entity.components.tank.reloadTime;
