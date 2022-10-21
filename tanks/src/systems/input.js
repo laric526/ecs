@@ -2,7 +2,7 @@ import { System } from "../../../src/system.js";
 import { keymap } from "../util/keyboard.js";
 import { mouse } from "../util/mouse.js";
 
-export const inputSystem = new System("input", ["input"], (entity) => {
+export const inputSystem = new System("input", ["input", "player_controlled"], (entity) => {
     let longitudinal = 0;
     if (keymap.w) { longitudinal++ }
     if (keymap.s) { longitudinal-- }

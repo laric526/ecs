@@ -16,7 +16,7 @@ export const playerEntity = new Entity(
 );
 
 const playerCannonEntity = new Entity(
-    ["attachment", "position", "rotation", "sprite", "attached", "point_at_mouse", "render"],
+    ["attachment", "position", "rotation", "sprite", "attached", "player_controlled", "point_at_mouse", "render"],
     (entity) => {
         entity.components.sprite.sprite = "tanks/red_cannon";
         entity.components.sprite.zIndex = 1;
