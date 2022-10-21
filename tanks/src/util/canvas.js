@@ -2,6 +2,7 @@ const BACKGROUND_COLOR = "bisque"
 
 var ctx;
 
+const spriteScale = 2;
 const renderScale = 2;
 
 const width = 256;
@@ -38,8 +39,8 @@ export function addToRenderQueue(sprite, x, y, angle, zIndex) {
 }
 
 export function drawSprite(sprite, x, y, angle) {
-    const width = sprite.width * renderScale;
-    const height = sprite.height * renderScale;
+    const width = sprite.width * renderScale * spriteScale;
+    const height = sprite.height * renderScale * spriteScale;
 
     ctx.translate(x, y);
     ctx.rotate(angle);
