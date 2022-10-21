@@ -1,6 +1,7 @@
 import { World } from "../../src/world.js";
 
 import { attachmentComponent } from "./components/attachment.js";
+import { colliderComponent } from "./components/collider.js";
 import { inputComponent } from "./components/input.js";
 import { positionComponent } from "./components/position.js";
 import { rotationComponent } from "./components/rotation.js";
@@ -11,6 +12,7 @@ import { velocityComponent, rotationVelocityComponent } from "./components/veloc
 import { attachedComponent, playerControlledComponent, renderComponent, pointAtMouseComponent } from "./components/tags.js";
 
 import { attachmentSystem } from "./systems/attachment.js";
+import { collisionSystem } from "./systems/collision.js";
 import { inputSystem } from "./systems/input.js";
 import { movementSystem } from "./systems/movement.js";
 import { pointAtMouseSystem } from "./systems/pointAtMouse.js";
@@ -30,6 +32,7 @@ import { duplicateEntity } from "../../src/entity.js";
 export const world = new World();
 
 world.registerComponent(attachmentComponent);
+world.registerComponent(colliderComponent);
 world.registerComponent(inputComponent);
 world.registerComponent(positionComponent);
 world.registerComponent(rotationComponent);
@@ -46,6 +49,7 @@ world.registerComponent(pointAtMouseComponent);
 world.registerComponent(renderComponent);
 
 world.registerSystem(attachmentSystem);
+world.registerSystem(collisionSystem);
 world.registerSystem(inputSystem);
 world.registerSystem(movementSystem);
 world.registerSystem(pointAtMouseSystem);

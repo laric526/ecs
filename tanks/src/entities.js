@@ -1,13 +1,16 @@
 import { Entity } from "../../src/entity.js";
 
 export const playerEntity = new Entity(
-    ["input", "position", "rotation", "speed", "rotation_speed", "sprite", "velocity", "rotation_velocity", "tank", "player_controlled", "render"],
+    ["collider", "input", "position", "rotation", "speed", "rotation_speed", "sprite", "velocity", "rotation_velocity", "tank", "player_controlled", "render"],
     (entity, world) => {
         entity.components.sprite.sprite = "tanks/red";
-        entity.components.position.x = 48;
-        entity.components.position.y = 24;
+        entity.components.position.x = 16;
+        entity.components.position.y = 16;
         entity.components.speed.speed = 2;
         entity.components.rotation_speed.speed = 3.5;
+
+        entity.components.collider.x = 8;
+        entity.components.collider.y = 8;
 
         const cannon = world.createEntity(playerCannonEntity);
         cannon.components.attachment.parent = entity.id;
