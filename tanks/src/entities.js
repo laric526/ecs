@@ -46,6 +46,6 @@ export const colliderTestEntity = new Entity(
         entity.components.position.y = 128;
         entity.components.collider.x = 16;
         entity.components.collider.y = 16;
-        entity.collider.collider.type = "wall"
+        entity.components.collider.type = "wall"
     }
 );
