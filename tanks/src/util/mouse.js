@@ -17,7 +17,7 @@ export function initializeMouse() {
     });
 
     window.addEventListener("mousedown", (event) => {
-        switch(mouse.button) {
+        switch(event.button) {
             case 0:
                 mouse.left = true;
                 break;
@@ -28,12 +28,10 @@ export function initializeMouse() {
                 mouse.right = true;
                 break;
         }
-
-        console.log(mouse);
     });
 
     window.addEventListener("mouseup", (event) => {
-        switch(mouse.button) {
+        switch(event.button) {
             case 0:
                 mouse.left = false;
                 break;
