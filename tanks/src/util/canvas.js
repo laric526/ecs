@@ -3,12 +3,12 @@ const BACKGROUND_COLOR = "bisque"
 var ctx;
 
 const spriteScale = 2;
-const renderScale = 2;
 
 const width = 256;
 const height = 256;
 
 export var canvasScale = 1;
+export const renderScale = 2;
 
 var renderQueue = [];
 
