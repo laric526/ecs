@@ -22,7 +22,7 @@ const playerCannonEntity = new Entity(
     ["attachment", "position", "rotation", "sprite", "attached", "player_controlled", "point_at_mouse", "render"],
     (entity) => {
         entity.components.sprite.sprite = "tanks/red_cannon";
-        entity.components.sprite.zIndex = 1;
+        entity.components.sprite.zIndex = 2;
     }
 );
 
@@ -30,6 +30,6 @@ export const missileEntity = new Entity(
     ["position", "rotation", "sprite", "velocity", "render"],
     (entity) => {
         entity.components.sprite.sprite = "missile";
-        entity.components.sprite.zIndex = -1;
+        entity.components.sprite.zIndex = 1;
     }
 )
