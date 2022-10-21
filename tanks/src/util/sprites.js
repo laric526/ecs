@@ -3,6 +3,7 @@ const SPRITES_FOLDER = "./img/sprites/"
 export const sprites = {};
 
 const files = [
+    "missile",
     "tanks/red",
     "tanks/red_cannon",
     "tanks/blue",
