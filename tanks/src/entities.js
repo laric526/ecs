@@ -34,4 +34,4 @@ export const missileEntity = new Entity(
         entity.components.sprite.sprite = "missile";
         entity.components.sprite.zIndex = 1;
     }
-)
+);
