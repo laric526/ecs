@@ -1,7 +1,7 @@
 import { Entity } from "../../src/entity.js";
 
 export const playerEntity = new Entity(
-    ["input", "position", "rotation", "speed", "rotation_speed", "sprite", "velocity", "rotation_velocity", "player_controlled", "render"],
+    ["input", "position", "rotation", "speed", "rotation_speed", "sprite", "velocity", "rotation_velocity", "tank", "player_controlled", "render"],
     (entity) => {
         entity.components.sprite.sprite = "tanks/red";
         entity.components.position.x = 48;
@@ -16,5 +16,14 @@ export const playerCannonEntity = new Entity(
     (entity) => {
         entity.components.attachment.parent = playerEntity.id;
         entity.components.sprite.sprite = "tanks/red_cannon";
+
+        playerEntity.components.tank.cannon = entity.id;
     }
 );
+
+export const missileEntity = new Entity(
+    ["position", "rotation", "sprite", "velocity"],
+    (entity) => {
+        entity.components.sprite.sprite = "tanks/red";
+    }
+)

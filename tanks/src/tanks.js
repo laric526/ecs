@@ -15,6 +15,7 @@ import { inputSystem } from "./systems/input.js";
 import { movementSystem } from "./systems/movement.js";
 import { pointAtMouseSystem } from "./systems/pointAtMouse.js";
 import { renderSystem } from "./systems/render.js";
+import { fireSystem } from "./systems/fire.js";
 import { velocitySystem, rotationVelocitySystem } from "./systems/velocity.js";
 
 import { playerEntity, playerCannonEntity } from "./entities.js";
@@ -49,11 +50,13 @@ world.registerSystem(inputSystem);
 world.registerSystem(movementSystem);
 world.registerSystem(pointAtMouseSystem);
 world.registerSystem(renderSystem);
+world.registerSystem(fireSystem);
 world.registerSystem(velocitySystem);
 world.registerSystem(rotationVelocitySystem);
 
 world.createEntity(playerEntity);
 world.createEntity(playerCannonEntity);
+playerEntity.components.tank.cannon = playerCannonEntity.id;
 
 initializeCanvas(document.getElementById("canvas"));
 initializeKeyboard();
