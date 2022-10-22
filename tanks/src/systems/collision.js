@@ -62,7 +62,7 @@ function handleTankCollision(entity, other, world) {
     }
 }
 
-function handleBulletCollision(entity, other, world) {
+function handleMissileCollision(entity, other, world) {
     switch(other.components.collider.type) {
         case "wall":
             world.removeEntity(entity);
