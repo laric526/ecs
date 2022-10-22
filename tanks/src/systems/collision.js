@@ -22,8 +22,8 @@ export const collisionSystem = new System("collision", ["collider", "position"],
                 case "tank":
                     handleTankCollision(entity, other, world);
                     break;
-                case "bullet":
-                    handleBulletCollision(entity, other, world);
+                case "missile":
+                    handleMissileCollision(entity, other, world);
                     break;
             }
         }
@@ -63,5 +63,9 @@ function handleTankCollision(entity, other, world) {
 }
 
 function handleBulletCollision(entity, other, world) {
-
+    switch(other.components.collider.type) {
+        case "wall":
+            world.removeEntity(entity);
+            break;
+    }
 }
