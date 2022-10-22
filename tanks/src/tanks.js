@@ -48,8 +48,8 @@ world.registerComponent(playerControlledComponent);
 world.registerComponent(pointAtMouseComponent);
 world.registerComponent(renderComponent);
 
-world.registerSystem(attachmentSystem);
 world.registerSystem(collisionSystem);
+world.registerSystem(attachmentSystem);
 world.registerSystem(inputSystem);
 world.registerSystem(movementSystem);
 world.registerSystem(pointAtMouseSystem);
