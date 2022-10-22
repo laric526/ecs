@@ -32,6 +32,7 @@ export const collisionSystem = new System("collision", ["collider", "position"],
 
 function handleTankCollision(entity, other, world) {
     switch(other.components.collider.type) {
+        case "tank":
         case "wall":
             const x = entity.components.position.x;
             const y = entity.components.position.y;
