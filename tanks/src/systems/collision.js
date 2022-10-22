@@ -67,7 +67,7 @@ function handleMissileCollision(entity, other, world) {
     switch(other.components.collider.type) {
         case "wall":
             console.log("Hit wall");
-            world.removeEntity(entity);
+            world.removeEntity(entity.id);
             break;
     }
 }
