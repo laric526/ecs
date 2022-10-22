@@ -1,4 +1,4 @@
-import { Entity } from "../../src/entity.js";
+import { Entity } from "../../../src/entity.js";
 
 export const playerEntity = new Entity(
     ["collider", "input", "position", "rotation", "speed", "rotation_speed", "sprite", "velocity", "rotation_velocity", "tank", "player_controlled", "render"],
@@ -27,28 +27,5 @@ const playerCannonEntity = new Entity(
     (entity) => {
         entity.components.sprite.sprite = "tanks/red_cannon";
         entity.components.sprite.zIndex = 2;
-    }
-);
-
-export const missileEntity = new Entity(
-    ["collider", "position", "rotation", "sprite", "velocity", "render"],
-    (entity) => {
-        entity.components.sprite.sprite = "missile";
-        entity.components.sprite.zIndex = 1;
-        entity.components.collider.x = 4;
-        entity.components.collider.y = 6;
-        entity.components.collider.type = "missile"
-    }
-);
-
-export const colliderTestEntity = new Entity(
-    ["collider", "position", "sprite", "render"],
-    (entity) => {
-        entity.components.sprite.sprite = "tanks/blue";
-        entity.components.position.x = 128;
-        entity.components.position.y = 128;
-        entity.components.collider.x = 16;
-        entity.components.collider.y = 16;
-        entity.components.collider.type = "wall"
     }
 );

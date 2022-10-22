@@ -1,6 +1,6 @@
 import { System } from "../../../src/system.js";
 import { duplicateEntity } from "../../../src/entity.js";
-import { missileEntity } from "../entities.js";
+import { missileEntity } from "../entities/missile.js";
 
 export const fireSystem = new System("fire", ["input", "position", "rotation", "tank", "player_controlled"], (entity, world) => {
     const reloadTimer = entity.components.tank.reloadTimer;

@@ -20,7 +20,7 @@ import { renderSystem } from "./systems/render.js";
 import { fireSystem } from "./systems/fire.js";
 import { velocitySystem, rotationVelocitySystem } from "./systems/velocity.js";
 
-import { playerEntity } from "./entities.js";
+import { playerEntity } from "./entities/player.js";
 
 import { initializeCanvas, clearCanvas, renderCanvas } from "./util/canvas.js";
 import { initializeKeyboard } from "./util/keyboard.js";
@@ -59,9 +59,6 @@ world.registerSystem(velocitySystem);
 world.registerSystem(rotationVelocitySystem);
 
 world.createEntity(playerEntity);
-
-import { colliderTestEntity } from "./entities.js";
-world.createEntity(colliderTestEntity);
 
 initializeCanvas(document.getElementById("canvas"));
 initializeKeyboard();
