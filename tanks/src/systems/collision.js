@@ -42,15 +42,18 @@ function handleTankCollision(entity, other, world) {
             const xStep = Math.sin(angle);
             const yStep = -Math.cos(angle);
 
-            const xCount = (xOther - 16 - x) / xStep;
-            const yCount = (yOther - 16 - y) / yStep;
+            const xSign = xStep != 0 ? Math.sign(xStep) : 1;
+            const ySign = yStep != 0 ? Math.sign(yStep) : 1; 
+            
+            const xCount = (xOther + (xSign * 16) - x) / xStep;
+            const yCount = (yOther + (ySign * 16) - y) / yStep;
 
             var count;
             if (Math.abs(xCount) < Math.abs(yCount)) { count = Math.abs(xCount); }
             else { count = Math.abs(yCount); }
             
             const xNew = x + xStep * count;
-            const yNew = y + yStep * count;
+            const yNew = y + yStep * count;            
 
             entity.components.position.x = xNew;
             entity.components.position.y = yNew;
