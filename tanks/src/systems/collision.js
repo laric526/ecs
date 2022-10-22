@@ -34,6 +34,7 @@ function handleTankCollision(entity, other, world) {
     switch(other.components.collider.type) {
         case "tank":
         case "wall":
+        case "hole":
             const x = entity.components.position.x;
             const y = entity.components.position.y;
             const xOther = other.components.position.x;
