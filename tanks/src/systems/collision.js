@@ -41,8 +41,8 @@ function handleTankCollision(entity, other, world) {
             const yOther = other.components.position.y;
 
             const angle = entity.components.rotation.angle;
-            const xStep = -Math.sin(angle);
-            const yStep = Math.cos(angle);
+            const xStep = Math.sin(angle);
+            const yStep = -Math.cos(angle);
 
             const xSign = xStep != 0 ? Math.sign(xStep) : 1;
             const ySign = yStep != 0 ? Math.sign(yStep) : 1; 
@@ -60,7 +60,9 @@ function handleTankCollision(entity, other, world) {
             entity.components.position.x = xNew;
             entity.components.position.y = yNew;
 
-            console.log(`Previous Position: (${( Math.sin(entity.components.rotation.angle) * -entity.components.speed.speed ).toFixed(4)}, ${(-Math.cos(entity.components.rotation.angle) * -entity.components.speed.speed ).toFixed(4)})`);
+            //console.log(`Previous Position: (${( Math.sin(entity.components.rotation.angle) * -entity.components.speed.speed ).toFixed(4)}, ${(-Math.cos(entity.components.rotation.angle) * -entity.components.speed.speed ).toFixed(4)})`);
+
+            console.log(`Collision. Player: (${x.toFixed(4)}, ${y.toFixed(4)}), Other: (${xOther.toFixed(4)}, ${yOther.toFixed(4)}), New Player: (${xNew.toFixed(4)}, ${yNew.toFixed(4)}), Step Size: (${xStep.toFixed(4)}, ${yStep.toFixed(4)}), Count: (${xCount.toFixed(4)}, ${yCount.toFixed(4)}), Final Count: ${count.toFixed(4)}`);
 
             break;
     }
