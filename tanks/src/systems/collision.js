@@ -19,7 +19,7 @@ export const collisionSystem = new System("collision", ["collider", "position"],
         
         if (horizontal && vertical) {    
             if (entity.components.collider.type == "tank") {
-                console.log(`ID: ${entity.id}, Other: [${other}]`);
+                console.log(`ID: ${entity.id}, Other: [${other.id}]`);
             }
             switch (entity.components.collider.type) {
                 case "tank":
