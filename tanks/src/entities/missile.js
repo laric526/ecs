@@ -7,6 +7,6 @@ export const missileEntity = new Entity(
         entity.components.sprite.zIndex = 1;
         entity.components.collider.x = 4;
         entity.components.collider.y = 6;
-        entity.components.collider.type = "missile"
+        entity.components.collider.type = "missile";
     }
 );
