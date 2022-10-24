@@ -17,7 +17,10 @@ export const collisionSystem = new System("collision", ["collider", "position"],
         const vertical = (otherLeft > left && otherLeft < right) || (otherRight > left && otherRight < right) || (left > otherLeft && left < otherRight) || (right > otherLeft && right < otherRight);
         const horizontal = (otherTop > top && otherTop < bottom) || (otherBottom > top && otherBottom < bottom) || (top > otherTop && top < otherBottom) || (bottom > otherTop && bottom < otherBottom);
         
-        if (horizontal && vertical) {
+        if (horizontal && vertical) {    
+            if (entity.components.collider.type == "tank") {
+                console.log(`ID: ${entity.id}, Other: [${other}]`);
+            }
             switch (entity.components.collider.type) {
                 case "tank":
                     handleTankCollision(entity, other, world);
