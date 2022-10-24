@@ -14,8 +14,8 @@ export const collisionSystem = new System("collision", ["collider", "position"],
         const otherTop = other.components.position.y - other.components.collider.y / 2;
         const otherBottom = other.components.position.y + other.components.collider.y / 2;
 
-        const vertical = (otherLeft > left && otherLeft < right) || (otherRight > left && otherRight < right) || (left > otherLeft && left < otherRight) || (right > otherLeft && right < otherRight);
-        const horizontal = (otherTop > top && otherTop < bottom) || (otherBottom > top && otherBottom < bottom) || (top > otherTop && top < otherBottom) || (bottom > otherTop && bottom < otherBottom);
+        const vertical = (otherLeft >= left && otherLeft <= right) || (otherRight >= left && otherRight <= right) || (left >= otherLeft && left <= otherRight) || (right >= otherLeft && right <= otherRight);
+        const horizontal = (otherTop >= top && otherTop <= bottom) || (otherBottom >= top && otherBottom <= bottom) || (top >= otherTop && top <= otherBottom) || (bottom >= otherTop && bottom <= otherBottom);
         
         if (horizontal && vertical) {    
             if (entity.components.collider.type == "tank") {
