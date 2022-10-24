@@ -1,10 +1,6 @@
 import { System } from "../../../src/system.js";
 
 export const collisionSystem = new System("collision", ["collider", "position"], (entity, world, others) => { 
-    if (entity.components.collider.type == "tank") {
-        console.log(`ID: ${entity.id}, Others: [${others}]`);
-    }
-    
     others.forEach((other) => {
         if (other.id == entity.id) { return; }
 
@@ -19,9 +15,9 @@ export const collisionSystem = new System("collision", ["collider", "position"],
         const otherBottom = other.components.position.y + other.components.collider.y / 2;
 
         const vertical = (otherLeft > left && otherLeft < right) || (otherRight > left && otherRight < right) || (left > otherLeft && left < otherRight) || (right > otherLeft && right < otherRight);
-        const horizotal = (otherTop > top && otherTop < bottom) || (otherBottom > top && otherBottom < bottom) || (top > otherTop && top < otherBottom) || (bottom > otherTop && bottom < otherBottom);
+        const horizontal = (otherTop > top && otherTop < bottom) || (otherBottom > top && otherBottom < bottom) || (top > otherTop && top < otherBottom) || (bottom > otherTop && bottom < otherBottom);
         
-        if (horizotal && vertical) {
+        if (horizontal && vertical) {
             switch (entity.components.collider.type) {
                 case "tank":
                     handleTankCollision(entity, other, world);
