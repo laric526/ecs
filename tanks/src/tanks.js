@@ -22,8 +22,11 @@ import { velocitySystem, rotationVelocitySystem } from "./systems/velocity.js";
 
 import { playerEntity } from "./entities/player.js";
 
+import { testMap } from "./maps/test.js";
+
 import { initializeCanvas, clearCanvas, renderCanvas } from "./util/canvas.js";
 import { initializeKeyboard } from "./util/keyboard.js";
+import { loadMap } from "./util/map.js";
 import { initializeMouse } from "./util/mouse.js";
 import { sprites, loadSprites } from "./util/sprites.js";
 
@@ -59,6 +62,8 @@ world.registerSystem(velocitySystem);
 world.registerSystem(rotationVelocitySystem);
 
 world.createEntity(playerEntity);
+
+loadMap(testMap);
 
 initializeCanvas(document.getElementById("canvas"));
 initializeKeyboard();
