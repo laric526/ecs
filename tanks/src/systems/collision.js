@@ -61,6 +61,8 @@ function handleTankCollision(entity, other, world) {
             entity.components.position.x = xNew;
             entity.components.position.y = yNew;
 
+            console.log(`Previous Position: (${( Math.sin(entity.components.rotation.angle) * -entity.components.speed.speed ).toFixed(4)}, ${(-Math.cos(entity.components.rotation.angle) * -entity.components.speed.speed ).toFixed(4)})`);
+
             break;
     }
 }
