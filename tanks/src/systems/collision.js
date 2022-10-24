@@ -40,8 +40,8 @@ function handleTankCollision(entity, other, world) {
             const xOther = other.components.position.x;
             const yOther = other.components.position.y;
 
-            //const angle = Math.atan2(y - yOther, x - xOther) + Math.PI / 2;
-            const angle = entity.components.rotation.angle;
+            const angle = Math.atan2(y - yOther, x - xOther) + Math.PI / 2;
+            //const angle = entity.components.rotation.angle;
             const xStep = Math.sin(angle);
             const yStep = -Math.cos(angle);
 
