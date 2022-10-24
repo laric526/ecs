@@ -5,8 +5,8 @@ export const playerEntity = new Entity(
     (entity, world) => {
         entity.components.sprite.sprite = "tanks/red";
 
-        entity.components.position.x = 8;
-        entity.components.position.y = 8;
+        entity.components.position.x = 32;
+        entity.components.position.y = 32;
 
         entity.components.collider.x = 16;
         entity.components.collider.y = 16;
