@@ -24,7 +24,7 @@ export const collisionSystem = new System("collision", ["collider", "position"],
             switch (entity.components.collider.type) {
                 case "tank":
                     handleTankCollision(entity, other, world);
-                    collisionSystem(entity, world, others);
+                    collisionSystem.callback(entity, world, others);
                     break;
                 case "missile":
                     handleMissileCollision(entity, other, world);
