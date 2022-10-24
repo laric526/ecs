@@ -63,7 +63,7 @@ world.registerSystem(rotationVelocitySystem);
 
 world.createEntity(playerEntity);
 
-loadMap(testMap);
+loadMap(testMap, world);
 
 initializeCanvas(document.getElementById("canvas"));
 initializeKeyboard();
