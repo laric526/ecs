@@ -57,7 +57,7 @@ function handleTankCollision(entity, other, world) {
             const xNew = x + xStep * count;
             const yNew = y + yStep * count;    
             
-            console.log(`Collision. Player: (${x}, ${y}), Step Size: (${xStep}, ${yStep}), Count: ${count}`);
+            console.log(`Collision. Player: (${Math.trunc(x)}, ${Math.trunc(y)}), New Player: (${Math.trunc(xNew)}, ${Math.trunc(yNew)}), Step Size: (${Math.trunc(xStep)}, ${Math.trunc(yStep)}), Count: ${Math.trunc(count)}`);
 
             entity.components.position.x = xNew;
             entity.components.position.y = yNew;
