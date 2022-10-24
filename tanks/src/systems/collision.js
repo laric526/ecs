@@ -1,6 +1,10 @@
 import { System } from "../../../src/system.js";
 
 export const collisionSystem = new System("collision", ["collider", "position"], (entity, world, others) => { 
+    if (entity.components.collider.type == "tank") {
+        console.log(`ID: ${entity.id}, Others: [${others}]`);
+    }
+    
     others.forEach((other) => {
         if (other.id == entity.id) { return; }
 
@@ -57,7 +61,7 @@ function handleTankCollision(entity, other, world) {
             const xNew = x + xStep * count;
             const yNew = y + yStep * count;    
             
-            console.log(`Collision. IDs: {${entity.id}, ${other.id}}, Player: (${x.toFixed(4)}, ${y.toFixed(4)}), Other: (${xOther.toFixed(4)}, ${yOther.toFixed(4)}), New Player: (${xNew.toFixed(4)}, ${yNew.toFixed(4)}), Step Size: (${xStep.toFixed(4)}, ${yStep.toFixed(4)}), Count: (${xCount.toFixed(4)}, ${yCount.toFixed(4)}), Final Count: ${count.toFixed(4)}`);
+            //console.log(`Collision. IDs: {${entity.id}, ${other.id}}, Player: (${x.toFixed(4)}, ${y.toFixed(4)}), Other: (${xOther.toFixed(4)}, ${yOther.toFixed(4)}), New Player: (${xNew.toFixed(4)}, ${yNew.toFixed(4)}), Step Size: (${xStep.toFixed(4)}, ${yStep.toFixed(4)}), Count: (${xCount.toFixed(4)}, ${yCount.toFixed(4)}), Final Count: ${count.toFixed(4)}`);
 
             entity.components.position.x = xNew;
             entity.components.position.y = yNew;
