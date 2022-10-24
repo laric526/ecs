@@ -7,7 +7,8 @@ const files = [
     "tanks/red",
     "tanks/red_cannon",
     "tanks/blue",
-    "tanks/blue_cannon"
+    "tanks/blue_cannon",
+    "tiles/base"
 ];
 
 export function loadSprites(callback) {
