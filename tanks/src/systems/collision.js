@@ -56,9 +56,13 @@ function handleTankCollision(entity, other, world) {
             
             const xNew = x + xStep * count;
             const yNew = y + yStep * count;    
-            
-            entity.components.position.x = xNew;
-            entity.components.position.y = yNew;
+
+            if (Math.abs(xCount) < Math.abs(yCount)) {
+                entity.components.position.x = xNew;
+            }
+            else {
+                entity.components.position.y = yNew;
+            }
 
             //console.log(`Previous Position: (${( Math.sin(entity.components.rotation.angle) * -entity.components.speed.speed ).toFixed(4)}, ${(-Math.cos(entity.components.rotation.angle) * -entity.components.speed.speed ).toFixed(4)})`);
 
